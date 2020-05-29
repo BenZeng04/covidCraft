@@ -1,27 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8e6edf5e-8ec2-4d90-a474-48042e5e5378" name="Default Changelist" comment="" />
+    <list default="true" id="8e6edf5e-8ec2-4d90-a474-48042e5e5378" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ICS4U ISP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ICS4U ISP.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="ICS4U ISP" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1cQWdMh8XYG7wMhTpkca7tKVaTD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/core.jar!/" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -50,7 +76,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1590461383572</updated>
-      <workItem from="1590461386346" duration="1593000" />
+      <workItem from="1590461386346" duration="2728000" />
+      <workItem from="1590502305797" duration="8010000" />
+      <workItem from="1590516547396" duration="24000" />
+      <workItem from="1590720476585" duration="1481000" />
+      <workItem from="1590722570449" duration="5000" />
+      <workItem from="1590761151348" duration="2448000" />
+      <workItem from="1590785468342" duration="9000" />
+      <workItem from="1590790243861" duration="1589000" />
     </task>
     <servers />
   </component>
@@ -58,25 +91,68 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1590462100906">
+    <state x="233" y="0" key="#Plugins" timestamp="1590791837064">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590462100906" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1590462100905">
+    <state x="233" y="0" key="#Plugins/0.0.1280.680@0.0.1280.680" timestamp="1590791837064" />
+    <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser" timestamp="1590510461099">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1590462100905" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1590462100905">
+    <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1590510461099" />
+    <state x="349" y="93" key="#com.intellij.refactoring.memberPullUp.PullUpDialog" timestamp="1590762590248">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1590462100905" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1590462100905">
+    <state x="349" y="93" key="#com.intellij.refactoring.memberPullUp.PullUpDialog/0.0.1280.680@0.0.1280.680" timestamp="1590762590248" />
+    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1590791267946">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1590462100905" />
+    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1590791267946" />
+    <state width="618" height="100" key="GridCell.Tab.0.bottom" timestamp="1590773027537">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="618" height="100" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590773027537" />
+    <state width="618" height="100" key="GridCell.Tab.0.center" timestamp="1590773027537">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="618" height="100" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1590773027537" />
+    <state width="618" height="100" key="GridCell.Tab.0.left" timestamp="1590773027537">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="618" height="100" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1590773027537" />
+    <state width="618" height="100" key="GridCell.Tab.0.right" timestamp="1590773027537">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="618" height="100" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1590773027537" />
+    <state x="121" y="0" key="SettingsEditor" timestamp="1590791269452">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1590791269452" />
+    <state x="337" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1590785467861">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="337" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1590785467861" />
+    <state x="93" y="93" width="1095" height="495" key="dock-window-1" timestamp="1590507739334">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="93" y="93" width="1095" height="495" key="dock-window-1/0.0.1280.680@0.0.1280.680" timestamp="1590507739334" />
     <state x="91" y="0" key="new project wizard" timestamp="1590461416975">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="91" y="0" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1590461416975" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1590791387668">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1590791387668" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/Downloads/Installers/processing-3.5.3-windows64/processing-3.5.3/core/library/core.jar!/processing/core/PApplet.class</url>
+          <line>934</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
