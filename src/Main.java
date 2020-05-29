@@ -21,20 +21,63 @@ public class Main
  */
 class TestScreen extends PScreen
 {
-    boolean clickedOnObject;
+    PComponent player = new Player();
+    @Override
     public void initialize()
     {
-        final PApplication context = getContext();
-        addComponent(new PComponent(0) // Background
+        addComponent(player);
+    }
+    @Override
+    public void run()
+    {
+        getContext().background(0);
+    }
+
+    @Override
+    public boolean keyPressEvent()
+    {
+        if(getContext().key == 'g')
         {
-            @Override
-            public void run()
-            {
-                context.background(255, 255, 255);
-                context.noStroke();
-                context.fill(255, 0, 0);
-                context.ellipse(300, 300, 100, 100);
-            }
-        });
+            player.hide();
+            return true;
+        }
+        else if(getContext().key == 'h')
+        {
+            player.show();
+            return true;
+        }
+        return false;
+    }
+}
+
+class Player extends PComponent
+{
+    private int X, Y;
+    public Player()
+    {
+        X = 300;
+        Y = 300;
+    }
+    @Override
+    public void run()
+    {
+        PApplication context = getContext();
+        context.ellipse(X, Y, 100, 100);
+    }
+
+    @Override
+    public boolean keyPressEvent()
+    {
+        PApplication context = getContext();
+        System.out.println(context.key);
+        if(context.key == 'd')
+            X += 10;
+        else if(context.key == 'a')
+            X -= 10;
+        else if(context.key == 's')
+            Y += 10;
+        else if(context.key == 'w')
+            Y -= 10;
+        return false;
     }
 }

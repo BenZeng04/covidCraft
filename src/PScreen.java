@@ -78,7 +78,7 @@ public class PScreen
      */
     public final void mousePressed()
     {
-        mousePressEvent();
+        if(mousePressEvent()) return;
         Collections.sort(components);
         Collections.reverse(components); // Reverses so that components near the top are given the trigger first.
         for(PComponent component: components)
@@ -90,9 +90,11 @@ public class PScreen
 
     /**
      * Used as an additional mousePressed function, run prior to any of the components. Meant to be overridden, but not necessary.
+     * @return whether or not an event was triggered. If the 'true' value is returned, this prevents other components from being triggered to prevent a chain of events.
      */
-    public void mousePressEvent()
+    public boolean mousePressEvent()
     {
+        return false;
     }
 
     /**
@@ -100,7 +102,7 @@ public class PScreen
      */
     public final void keyPressed()
     {
-        keyPressEvent();
+        if(keyPressEvent()) return;
         Collections.sort(components);
         for(PComponent component: components)
             if(component.keyPressed())
@@ -109,9 +111,11 @@ public class PScreen
 
     /**
      * Used as an additional keyPressed function, run prior to any of the components. Meant to be overridden, but not necessary.
+     * @return whether or not an event was triggered. If the 'true' value is returned, this prevents other components from being triggered to prevent a chain of events.
      */
-    public void keyPressEvent()
+    public boolean keyPressEvent()
     {
+        return false;
     }
 
     /**
