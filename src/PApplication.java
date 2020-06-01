@@ -7,7 +7,16 @@
 
 import processing.core.PApplet;
 
-public class PApplication extends PApplet
+/**
+ * @author Ben Zeng
+ * Revision History:
+ * - May 26, 2020: Created ~Ben Zeng. Time Spent: 30m
+ * - May 28, 2020: Updated ~Ben Zeng. Time Spent: 20m
+ * The application context which all graphics are displayed on. Can be instantiated and a specific screen can be set to be played.
+ * Essentially an extention to the PApplet library, which includes several methods that allow for straight-forward screen switching.
+ * @version 1
+ */
+public final class PApplication extends PApplet
 {
     /**
      * The current screen which the application is displaying
@@ -90,12 +99,22 @@ public class PApplication extends PApplet
     /**
      * Sets and initializes the current screen.
      *
-     * @param currentScreen
+     * @param currentScreen the current screen
      */
     public void setCurrentScreen(PScreen currentScreen)
     {
         this.currentScreen = currentScreen;
         currentScreen.setContext(this);
         currentScreen.initialize();
+    }
+
+    /**
+     * A getter for the current screen.
+     *
+     * @return the current screen that the application is playing
+     */
+    public PScreen getCurrentScreen()
+    {
+        return currentScreen;
     }
 }

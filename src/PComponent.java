@@ -5,12 +5,20 @@
  * Implementation of additional libraries that will be useful throughout the coding process.
  */
 
-
 /**
+ * @author Ben Zeng
+ * Revision History:
+ * - May 26, 2020: Created ~Ben Zeng. Time Spent: 1h
  * Class representing a single component on the screen, that has its own unique set of listeners and graphics.
+ * @version 1
  */
 public abstract class PComponent implements Comparable<PComponent>
 {
+    /**
+     * The screen which this component belongs to.
+     */
+    private PScreen parentScreen;
+
     /**
      * An identifier for the layer of the component. Necessary when handling multi-layered components, with specific components on a higher level than others.
      */
@@ -64,7 +72,7 @@ public abstract class PComponent implements Comparable<PComponent>
     /**
      * Sets the context of a given application. Automatically called when adding a component to a screen.
      *
-     * @param context
+     * @param context the context
      */
     public final void setContext(PApplication context)
     {
@@ -79,6 +87,26 @@ public abstract class PComponent implements Comparable<PComponent>
     public final PApplication getContext()
     {
         return context;
+    }
+
+    /**
+     * Returns the parent screen.
+     *
+     * @return The parent screen
+     */
+    public PScreen getParentScreen()
+    {
+        return parentScreen;
+    }
+
+    /**
+     * Sets the parent screen.
+     *
+     * @param parentScreen the parent screen
+     */
+    public void setParentScreen(PScreen parentScreen)
+    {
+        this.parentScreen = parentScreen;
     }
 
     /**
@@ -113,6 +141,8 @@ public abstract class PComponent implements Comparable<PComponent>
 
     /**
      * Ran directly from a PScreen. Performs a few un-overridable actions prior to calling mousePressEvent().
+     *
+     * @return whether or not an event was triggered. If the 'true' value is returned, this prevents other components from being triggered to prevent a chain of events.
      */
     public final boolean mousePressed()
     {
@@ -133,6 +163,8 @@ public abstract class PComponent implements Comparable<PComponent>
 
     /**
      * Ran directly from a PScreen. Performs a few un-overridable actions prior to calling keyPressEvent().
+     *
+     * @return whether or not an event was triggered. If the 'true' value is returned, this prevents other components from being triggered to prevent a chain of events.
      */
     public final boolean keyPressed()
     {
