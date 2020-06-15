@@ -1,11 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="ICS4U ISP:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e6edf5e-8ec2-4d90-a474-48042e5e5378" name="Default Changelist" comment="" />
+    <list default="true" id="8e6edf5e-8ec2-4d90-a474-48042e5e5378" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ICS4U_ISP_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backgrounds/Company_Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backgrounds/DialogueBox.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backgrounds/Exit_Bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backgrounds/HighScores_Bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backgrounds/Instructions_Bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backgrounds/Menu_Bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Characters/Alice_A.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Characters/Alice_D.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Characters/Alice_S.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Characters/Alice_W.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/House_CovidCraft/FINAL_Bath1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/House_CovidCraft/FINAL_Bath2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/House_CovidCraft/FINAL_Bed_Alice.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/House_CovidCraft/FINAL_Bed_Ava.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/House_CovidCraft/FINAL_Bed_Carrie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/House_CovidCraft/FINAL_Dining.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/House_CovidCraft/FINAL_Hallway.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/House_CovidCraft/FINAL_Kitchen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/House_CovidCraft/FINAL_Living.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Items/AloeVera.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Items/Bucket.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Items/Elastic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Items/EssentialOil.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Items/FaceMask.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Items/FaceShield.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Items/HandSanitizer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Items/HolePuncher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Items/PlasticBottle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Items/PlasticGuard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Items/PlasticSheet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Items/RubbingAlcohol.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Items/SanitizerGel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Items/Scissors.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Items/ShieldCover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Items/TShirt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Items/Tape.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Items/TapeMeasure.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Items/Thread.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Items/UtilityKnife.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Items/VisorHandle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Other/Computer_Bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sprites_Humans/Alice_A.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sprites_Humans/Alice_A_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sprites_Humans/Alice_A_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sprites_Humans/Alice_D.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sprites_Humans/Alice_D_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sprites_Humans/Alice_D_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sprites_Humans/Alice_S.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sprites_Humans/Alice_S_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sprites_Humans/Alice_S_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sprites_Humans/Alice_W.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sprites_Humans/Alice_W_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sprites_Humans/Alice_W_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AliceRoom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AvaRoom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Button.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CarrieRoom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Computer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CraftingStation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DialogueGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DiningRoom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Door.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ExitMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/FirstBathroom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GameplayRoom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Hallway.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Highscores.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HitBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HostApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/InstructionsMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interactable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/InventoryGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Kitchen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Level.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LivingRoom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MultiPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PauseMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Position.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recipe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Roommate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SaveSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SecondBathroom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SplashScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/StorageUnit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TextBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TransitionEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ICS4U ISP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ICS4U ISP.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/MainMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/PApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/PComponent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/PScreen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Projectile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/TestScreen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/covidCraft/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/covidCraft/MainMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/covidCraft/PApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/covidCraft/PComponent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/covidCraft/PScreen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/covidCraft/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/covidCraft/Projectile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/covidCraft/TestScreen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScreenComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScreenPanel.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="ICS4U ISP" />
@@ -14,6 +151,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -21,29 +159,32 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1cQWdMh8XYG7wMhTpkca7tKVaTD" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/core.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ICS4U ISP" />
@@ -54,9 +195,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NewMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="NewMain" />
+      <module name="ICS4U ISP" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.NewMain" />
       </list>
     </recent_temporary>
   </component>
@@ -79,70 +228,163 @@
       <workItem from="1590785468342" duration="9000" />
       <workItem from="1590790243861" duration="2474000" />
       <workItem from="1591042463910" duration="36000" />
-      <workItem from="1591042505104" duration="2679000" />
+      <workItem from="1591042505104" duration="2800000" />
+      <workItem from="1591045331214" duration="37000" />
+      <workItem from="1591045388275" duration="591000" />
+      <workItem from="1591045993953" duration="10632000" />
+      <workItem from="1591060820359" duration="3277000" />
+      <workItem from="1591067296433" duration="16000" />
+      <workItem from="1591108304381" duration="4653000" />
+      <workItem from="1591220531968" duration="16301000" />
+      <workItem from="1591322530773" duration="1424000" />
+      <workItem from="1591324197083" duration="2296000" />
+      <workItem from="1591405334708" duration="3973000" />
+      <workItem from="1591460082721" duration="8000" />
+      <workItem from="1591465508123" duration="3306000" />
+      <workItem from="1591476527699" duration="11000" />
+      <workItem from="1591637583314" duration="2757000" />
+      <workItem from="1591641914910" duration="4000" />
+      <workItem from="1591642201304" duration="1943000" />
+      <workItem from="1591664352745" duration="3879000" />
+      <workItem from="1591668270002" duration="1796000" />
+      <workItem from="1591711770415" duration="1737000" />
+      <workItem from="1591713871760" duration="6354000" />
+      <workItem from="1591721699860" duration="22000" />
+      <workItem from="1591734967588" duration="3648000" />
+      <workItem from="1591738633248" duration="4970000" />
+      <workItem from="1591743625735" duration="4045000" />
+      <workItem from="1591749914054" duration="5812000" />
+      <workItem from="1591755822632" duration="453000" />
+      <workItem from="1591810745722" duration="5152000" />
+      <workItem from="1591823254231" duration="230000" />
+      <workItem from="1591823625978" duration="6056000" />
+      <workItem from="1591893870043" duration="3993000" />
+      <workItem from="1591912667988" duration="2815000" />
+      <workItem from="1591924558767" duration="230000" />
+      <workItem from="1591936695226" duration="321000" />
+      <workItem from="1591999261366" duration="20898000" />
+      <workItem from="1592063111588" duration="14160000" />
+      <workItem from="1592176950746" duration="5096000" />
+      <workItem from="1592188627682" duration="7813000" />
+      <workItem from="1592196517078" duration="8262000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="233" y="0" key="#Plugins" timestamp="1590791837064">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="0" key="#Plugins/0.0.1280.680@0.0.1280.680" timestamp="1590791837064" />
-    <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser" timestamp="1590792532194">
+    <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser" timestamp="1592204476209">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1590792532194" />
+    <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1592204476209" />
+    <state x="370" y="124" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1592204641402">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="370" y="124" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1280.680@0.0.1280.680" timestamp="1592204641402" />
+    <state x="345" y="24" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog" timestamp="1591717968173">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="345" y="24" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog/0.0.1280.680@0.0.1280.680" timestamp="1591717968173" />
     <state x="349" y="93" key="#com.intellij.refactoring.memberPullUp.PullUpDialog" timestamp="1590762590248">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="349" y="93" key="#com.intellij.refactoring.memberPullUp.PullUpDialog/0.0.1280.680@0.0.1280.680" timestamp="1590762590248" />
+    <state x="438" y="226" width="404" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1592198552694">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="438" y="226" width="404" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.680@0.0.1280.680" timestamp="1592198552694" />
+    <state x="229" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1592002733365">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="229" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680@0.0.1280.680" timestamp="1592002733365" />
+    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592198523536">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1592198523536" />
     <state x="389" y="73" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1591043878712">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="389" y="73" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.680@0.0.1280.680" timestamp="1591043878712" />
-    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1591043756742">
+    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1591640127239">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1591043756742" />
-    <state width="1237" height="2" key="GridCell.Tab.0.bottom" timestamp="1591044970293">
+    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1591640127239" />
+    <state width="1237" height="167" key="GridCell.Tab.0.bottom" timestamp="1592205395303">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="2" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1591044970293" />
-    <state width="1237" height="2" key="GridCell.Tab.0.center" timestamp="1591044970293">
+    <state width="1237" height="167" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592205395303" />
+    <state width="1237" height="167" key="GridCell.Tab.0.center" timestamp="1592205395303">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="2" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1591044970293" />
-    <state width="1237" height="2" key="GridCell.Tab.0.left" timestamp="1591044970293">
+    <state width="1237" height="167" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1592205395303" />
+    <state width="1237" height="167" key="GridCell.Tab.0.left" timestamp="1592205395303">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="2" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1591044970293" />
-    <state width="1237" height="2" key="GridCell.Tab.0.right" timestamp="1591044970293">
+    <state width="1237" height="167" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1592205395303" />
+    <state width="1237" height="167" key="GridCell.Tab.0.right" timestamp="1592205395303">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="2" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1591044970293" />
-    <state x="121" y="0" key="SettingsEditor" timestamp="1591042298374">
+    <state width="1237" height="167" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1592205395303" />
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1592205365903">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1591042298374" />
-    <state x="337" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1590785467861">
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592205365903" />
+    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1592205365903">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="337" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1590785467861" />
+    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1592205365903" />
+    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1592205365903">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1592205365903" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1592205365903">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1592205365903" />
+    <state x="121" y="0" key="SettingsEditor" timestamp="1592205161309">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1592205161309" />
+    <state x="337" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1592196580232">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="337" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1592196580232" />
+    <state x="450" y="258" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591897486483">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="450" y="258" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1591897486483" />
+    <state x="203" y="77" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1592202514933">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="203" y="77" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1280.680@0.0.1280.680" timestamp="1592202514933" />
     <state x="93" y="93" width="1095" height="495" key="dock-window-1" timestamp="1590507739334">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="93" y="93" width="1095" height="495" key="dock-window-1/0.0.1280.680@0.0.1280.680" timestamp="1590507739334" />
-    <state x="91" y="0" key="new project wizard" timestamp="1590461416975">
+    <state x="330" y="139" width="612" height="536" key="find.popup" timestamp="1592205139045">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="91" y="0" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1590461416975" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1591043877751">
+    <state x="330" y="139" width="612" height="536" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1592205139045" />
+    <state x="91" y="0" key="new project wizard" timestamp="1591721720100">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1591043877751" />
+    <state x="91" y="0" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1591721720100" />
+    <state x="297" y="151" key="run.anything.popup" timestamp="1592202357600">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1592202357600" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1592188445433">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1592188445433" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

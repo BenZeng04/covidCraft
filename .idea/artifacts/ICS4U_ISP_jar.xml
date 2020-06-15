@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ICS4U ISP:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ICS4U_ISP_jar</output-path>
+    <root id="archive" name="ICS4U ISP.jar">
+      <element id="module-output" name="ICS4U ISP" />
+    </root>
+  </artifact>
+</component>

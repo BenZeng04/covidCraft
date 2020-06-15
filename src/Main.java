@@ -6,7 +6,7 @@
  * Usage of Processing's PApplet Libraries: https://forum.processing.org/two/discussion/12319/using-papplet-runsketch-to-create-multiple-windows-in-a-ps3-sketch
  */
 
-import processing.core.PApplet;
+import javax.swing.*;
 
 /**
  * @author Ben Zeng, Oscar Han, Nathan Lu
@@ -23,10 +23,21 @@ public class Main
      */
     public static void main(String[] args)
     {
-        args = new String[] {"", ""};
-        PApplication application = new PApplication(800, 500);
-        application.setCurrentScreen(new MainMenu());
-        PApplet.runSketch(args, application);
+        JFrame frame = new JFrame();
+        HostApplication mainApplication = new HostApplication();
+        frame.setContentPane(mainApplication);
+        mainApplication.add(new SplashScreen(),"SplashScreen");
+        mainApplication.add(new MainMenu(), "MainMenu");
+        mainApplication.add(new Game(false), "Gameplay");
+        mainApplication.add(new InstructionsMenu(),"InstructionsMenu");
+        mainApplication.add(new Highscores(),"HighScoresMenu");
+        mainApplication.add(new ExitMenu(),"ExitMenu");
+        //mainApplication.displayPanel("SplashScreen");
+         mainApplication.displayPanel("SplashScreen");
+        frame.setSize(1080, 720);
+        frame.setTitle("covidCraft");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+        frame.setResizable(false);
     }
 }
-
