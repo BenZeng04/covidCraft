@@ -83,7 +83,7 @@ public class AccuracyMinigame extends ScreenPanel
         storageUnit = toAdd;
         background = Item.loadImage("Backgrounds/MinigameBackground1.png");
         bucket = Item.loadImage("Backgrounds/BucketY.png");
-        lines= new ArrayList<Position>();
+        lines= new ArrayList<>();
         lastPos= new Position(-1,0);
         addComponent(new DialogueGUI("In the third mini-game, you will create a visor out of a bucket in order to create a face shield.")
         {
@@ -200,8 +200,6 @@ public class AccuracyMinigame extends ScreenPanel
                    score-= (distance- 70);
             }
         }
-        if(score < 0)
-            return 0;
-        return score;
+        return Math.max(score, 0);
     }
 }

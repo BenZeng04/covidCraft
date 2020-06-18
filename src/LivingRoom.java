@@ -1,8 +1,7 @@
 import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.event.*;
 import java.io.*;
-import java.util.ArrayList;
+
 /**
  * @author Ben Zeng, Nathan Lu
  * Revision History:

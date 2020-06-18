@@ -37,7 +37,7 @@ public class Player extends ScreenComponent
     /**
      * A class that represents the Player inventory.
      */
-    private class Inventory extends InventoryGUI
+    private static class Inventory extends InventoryGUI
     {
         @Override
         public Position[] getItemLocations()
@@ -140,15 +140,15 @@ public class Player extends ScreenComponent
      * @param x x position of Player
      * @param y y position of Player
      */
-    private boolean wouldCollide(int x, int y)
+    private boolean canMoveTo(int x, int y)
     {
         GameplayRoom room = (GameplayRoom) getParentScreen();
         for(HitBox hitbox: room.getHitBoxes())
         {
             if(hitbox.isColliding(x - PLAYER_HITBOX_WIDTH / 2, y - PLAYER_HEIGHT / 2 + HITBOX_OFFSET, PLAYER_HITBOX_WIDTH, PLAYER_HITBOX_HEIGHT))
-                return true;
+                return false;
         }
-        return false;
+        return true;
     }
     /**
      * Draws Player and changes status when Player is moving
@@ -172,22 +172,22 @@ public class Player extends ScreenComponent
         switch(direction)
         {
             case 'w':
-                if(!wouldCollide(x, y - accelerate))
+                if(canMoveTo(x, y - accelerate))
                     y -= accelerate;
                 img = sprites[0][motion / FRAME_DELAY];
                 break;
             case 'a':
-                if(!wouldCollide(x - accelerate, y))
+                if(canMoveTo(x - accelerate, y))
                     x -= accelerate;
                 img = sprites[1][motion / FRAME_DELAY];
                 break;
             case 's':
-                if(!wouldCollide(x, y + accelerate))
+                if(canMoveTo(x, y + accelerate))
                     y += accelerate;
                 img = sprites[2][motion / FRAME_DELAY];
                 break;
             case 'd':
-                if(!wouldCollide(x + accelerate, y))
+                if(canMoveTo(x + accelerate, y))
                     x += accelerate;
                 img = sprites[3][motion / FRAME_DELAY];
                 break;

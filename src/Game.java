@@ -6,7 +6,6 @@
  */
 
 import java.io.*;
-import java.util.*;
 
 /**
  * @author Ben Zeng, Oscar Han, Nathan Lu
@@ -146,15 +145,6 @@ public class Game extends MultiPanel
     public Item[] getInventory()
     {
         return inventory;
-    }
-
-    /**
-     * Setter for inventory
-     * @param inventory the player inventory
-     */
-    public void setInventory(Item[] inventory)
-    {
-        this.inventory = inventory;
     }
 
     /**

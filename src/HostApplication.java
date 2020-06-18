@@ -60,22 +60,6 @@ public class HostApplication extends MultiPanel
     }
 
     /**
-     * Starts the animation timer
-     */
-    public final void startAnimation()
-    {
-        animations.start();
-    }
-
-    /**
-     * Stops the animation timer
-     */
-    public final void stopAnimation()
-    {
-        animations.stop();
-    }
-
-    /**
      * Returns the root of a panel in the context of MultiPanels in an Application.
      *
      * @param panel the panel

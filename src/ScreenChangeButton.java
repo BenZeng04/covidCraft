@@ -1,6 +1,4 @@
 //Nathan Lu
-import javax.swing.*;
-import java.awt.*;
 import java.awt.event.MouseEvent;
 /**
  * @author Ben Zeng, Oscar Han, Nathan Lu

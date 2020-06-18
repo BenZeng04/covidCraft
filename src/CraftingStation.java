@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -79,18 +78,22 @@ public class CraftingStation extends StorageUnit
                         Item item = Item.IDtoItem.get(recipe.getID());
                         ScreenPanel minigame = null;
                         // Special case for the three special items that summon a minigame
-                        if(item == Item.VISORHANDLE)
+                        if(item.equals(Item.VISORHANDLE))
                             minigame = new AccuracyMinigame(item, CraftingStation.this);
-                        else if(item == Item.FACEMASK)
+                        else if(item.equals(Item.FACEMASK))
                             minigame = new ScissorsMinigame(item, CraftingStation.this);
-                        else if(item == Item.SANITIZERGEL)
+                        else if(item.equals(Item.SANITIZERGEL))
                             minigame = new PouringMinigame(item, CraftingStation.this);
 
-                        ArrayList<Integer> IDs = (ArrayList<Integer>) recipe.getIngredientIDs().clone(); // removing from storage
+                        ArrayList<Integer> IDs = new ArrayList<>();
+                        IDs.addAll(recipe.getIngredientIDs()); // removing from storage
+                        int ingredientQuality = -1;
                         for(int i = 0; i < storage.length; i++)
                         {
                             if(storage[i] != null && !storage[i].IS_TOOL && IDs.contains(storage[i].ID))
                             {
+                                if(storage[i].QUALITY != -1)
+                                    ingredientQuality = storage[i].QUALITY;
                                 IDs.remove((Integer) storage[i].ID);
                                 storage[i] = null;
                             }
@@ -101,7 +104,11 @@ public class CraftingStation extends StorageUnit
                             getHostPanel().add(minigame, "Minigame");
                             getHostPanel().displayPanel("Minigame");
                         }
-                        else CraftingStation.this.addItem(item);
+                        else
+                        {
+                            item = item.changeQuality(ingredientQuality);
+                            CraftingStation.this.addItem(item);
+                        }
                         return;
                     }
                 }

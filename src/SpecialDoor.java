@@ -17,30 +17,55 @@ public class SpecialDoor extends Interactable
     public void whenInteractedWith()
     {
         Game game = getGame();
-        if(game.getCurrentLevel() < 2)
+        Level level = game.getLevel(game.getCurrentLevel());
+        Item finalItem = level.getObjective();
+        boolean hasItem = false;
+        for(Item i: game.getInventory())
         {
-            DialogueGUI levelComplete = new DialogueGUI("CONGRATULATIONS! You have completed level " + game.getCurrentLevel() + "! It is time to move on to the next level! You will promptly be returned to your room.")
+            if(finalItem.equals(i))
             {
-                @Override
-                public void whenExited()
+                hasItem = true;
+                break;
+            }
+        }
+        if(hasItem)
+        {
+            if(game.getCurrentLevel() < 2)
+            {
+                DialogueGUI levelComplete = new DialogueGUI("CONGRATULATIONS! You have completed level " + game.getCurrentLevel() + "! It is time to move on to the next level! You will promptly be returned to your room.")
                 {
-                    game.incrementLevel();
-                    addComponent(new TransitionEvent("Gameplay", "Alice's Room"));
-                }
-            };
-            addComponent(levelComplete);
+                    @Override
+                    public void whenExited()
+                    {
+                        game.incrementLevel();
+                        addComponent(new TransitionEvent("Gameplay", "Alice's Room"));
+                    }
+                };
+                addComponent(levelComplete);
+            }
+            else
+            {
+                DialogueGUI levelComplete = new DialogueGUI("CONGRATULATIONS! You have beat the game! You will promptly be returned to the main menu.")
+                {
+                    @Override
+                    public void whenExited()
+                    {
+                        addComponent(new TransitionEvent("MainMenu"));
+                    }
+                };
+                addComponent(levelComplete);
+            }
         }
         else
         {
-            DialogueGUI levelComplete = new DialogueGUI("CONGRATULATIONS! You have beat the game! You will promptly be returned to the main menu.")
+            DialogueGUI error = new DialogueGUI("What are you trying to do here? You haven't even crafted your item yet! Don't even think about it...")
             {
                 @Override
                 public void whenExited()
                 {
-                    addComponent(new TransitionEvent("MainMenu"));
                 }
             };
-            addComponent(levelComplete);
+            addComponent(error);
         }
     }
 }

@@ -19,7 +19,6 @@ import javax.imageio.*;
 public class MainMenu extends ScreenPanel
 {
     private Image bg;
-    private Button[] fromMenu = new Button[4];
 
     /**
      * Default constructor
@@ -35,6 +34,7 @@ public class MainMenu extends ScreenPanel
         {
         }
         // Creates buttons.
+        Button[] fromMenu = new Button[4];
         fromMenu[0] = new ScreenChangeButton("Gameplay", 340, 250, 400, 60, 5)
         {
             @Override
@@ -91,12 +91,7 @@ public class MainMenu extends ScreenPanel
         try
         {
             BufferedReader br = new BufferedReader(new FileReader("saveFile.txt"));
-            if(br.readLine() == null)
-            {
-                return true;
-            }
-            else
-                return false;
+            return br.readLine() == null;
         }
         catch(IOException e)
         {

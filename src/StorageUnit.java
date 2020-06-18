@@ -85,11 +85,6 @@ public class StorageUnit extends Interactable
         return storage;
     }
 
-    public int getID()
-    {
-        return id;
-    }
-
     /**
      * Checks if there's still an empty space in the array
      */
@@ -137,13 +132,12 @@ public class StorageUnit extends Interactable
         /**
          * Helper method to find the start location when displaying item slots
          * @param middleLocation the middle location
-         * @param spacing spacing distance of items
          * @param count item count
          * @return the position
          */
-        private int findStart(int middleLocation, int spacing, int count)
+        private int findStart(int middleLocation, int count)
         {
-            return middleLocation - (spacing * (count - 1) / 2);
+            return middleLocation - (InventoryGUI.ITEM_SPACING * (count - 1) / 2);
         }
 
         @Override
@@ -152,14 +146,14 @@ public class StorageUnit extends Interactable
             Position[] ret = new Position[INVENTORY_SIZE];
 
             for(int i = 0; i < Player.INVENTORY_SIZE; i++)
-                ret[i] = new Position(findStart(Game.GAME_WIDTH / 2, ITEM_SPACING, Player.INVENTORY_SIZE) + ITEM_SPACING * i, Game.GAME_HEIGHT * 3 / 4);
+                ret[i] = new Position(findStart(Game.GAME_WIDTH / 2, Player.INVENTORY_SIZE) + ITEM_SPACING * i, Game.GAME_HEIGHT * 3 / 4);
 
             for(int i = 0; i < INVENTORY_HEIGHT; i++)
             {
                 for(int j = 0; j < INVENTORY_WIDTH; j++)
                 {
                     int index = i * INVENTORY_WIDTH + j + Player.INVENTORY_SIZE;
-                    ret[index] = new Position(findStart(Game.GAME_WIDTH / 2, ITEM_SPACING, INVENTORY_WIDTH) + ITEM_SPACING * j, findStart(Game.GAME_HEIGHT / 4, ITEM_SPACING, INVENTORY_HEIGHT) + ITEM_SPACING * i);
+                    ret[index] = new Position(findStart(Game.GAME_WIDTH / 2, INVENTORY_WIDTH) + ITEM_SPACING * j, findStart(Game.GAME_HEIGHT / 4, INVENTORY_HEIGHT) + ITEM_SPACING * i);
                 }
             }
             return ret;

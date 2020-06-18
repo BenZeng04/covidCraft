@@ -86,21 +86,18 @@ public class HitBox extends ScreenComponent
     public boolean isColliding(int x, int y, int xLength, int yLength)
     {
         // x1 <= y2 && y1 <= x2
-        if(xStart <= x + xLength && x <= xEnd && yStart <= y + yLength && y <= yEnd) {
-            return true;
-        }
-        return false;
+        return xStart <= x + xLength && x <= xEnd && yStart <= y + yLength && y <= yEnd;
     }
 
     /**
-     * Rect is first 4 params mouse is last 2
-     * @param x
-     * @param y
-     * @param xL
-     * @param yL
-     * @param mx
-     * @param my
-     * @return
+     * Helper method for point and rectangle collision
+     * @param x Rectangle start
+     * @param y Rectangle start
+     * @param xL Rectangle length
+     * @param yL Rectangle width
+     * @param mx MouseX
+     * @param my MouseY
+     * @return Whether it is colliding
      */
     public static boolean pointRectCollision(int x, int y, int xL, int yL, int mx, int my)
     {

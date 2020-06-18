@@ -7,132 +7,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e6edf5e-8ec2-4d90-a474-48042e5e5378" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README_Resources.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sprites_Humans/Ava.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backgrounds/Exit_Bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/Backgrounds/Exit_Bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backgrounds/Instructions_Bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/Backgrounds/Instructions_Bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ICS4U ISP.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ICS4U ISP.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Items/FaceShield.png" beforeDir="false" afterPath="$PROJECT_DIR$/Items/FaceShield.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Items/PlasticGuard.png" beforeDir="false" afterPath="$PROJECT_DIR$/Items/PlasticGuard.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Items/ShieldCover.png" beforeDir="false" afterPath="$PROJECT_DIR$/Items/ShieldCover.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Items/VisorHandle.png" beforeDir="false" afterPath="$PROJECT_DIR$/Items/VisorHandle.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Other/BucketY.png" beforeDir="false" afterPath="$PROJECT_DIR$/Backgrounds/BucketY.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Other/Computer_Bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/Backgrounds/Computer_Bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ICS4U_ISP_jar/ICS4U ISP.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ICS4U_ISP_jar/ICS4U ISP.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/AccuracyMinigame$1$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/AccuracyMinigame$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/AccuracyMinigame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/AccuracyMinigame$Line.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/AccuracyMinigame$Pointer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/AccuracyMinigame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/AliceRoom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/AvaRoom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Button.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/Button.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/CarrieRoom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Computer$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Computer$ComputerGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Computer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/CraftingStation$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/CraftingStation$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/CraftingStation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/DialogueGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/DiningRoom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Door.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/AccuracyMinigame$1$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/AccuracyMinigame$1$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/AccuracyMinigame$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/AccuracyMinigame$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/AccuracyMinigame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/AccuracyMinigame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/AccuracyMinigame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/AccuracyMinigame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/AccuracyMinigame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/AccuracyMinigame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Computer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/Computer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Computer$ComputerGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/Computer$ComputerGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Computer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/Computer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/CraftingStation$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/CraftingStation$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/CraftingStation$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/CraftingStation$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/CraftingStation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/CraftingStation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Door.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/Door.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/ExitMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/ExitMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/FirstBathroom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Game.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/GameplayRoom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Hallway.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Highscores.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/GameplayRoom.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/GameplayRoom.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/HitBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/HitBox.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/HostApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/HostApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/InstructionsMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/InstructionsMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Interactable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/InventoryGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Item.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Kitchen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Level.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/LivingRoom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/MainMenu$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/MainMenu$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/MainMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Minigame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/PauseMenu$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/PauseMenu$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/PauseMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Player$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Player$Inventory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/PouringMinigame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/PouringMinigame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Recipe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/Recipe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Roommate$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Roommate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/SaveSystem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/ScissorsMinigame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/ScissorsMinigame$Ball$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/ScissorsMinigame$Ball.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/ScissorsMinigame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/ScreenChangeButton.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/ScreenPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/ScreenPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/ScreenPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/ScreenPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/SecondBathroom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/SpecialDoor$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/SpecialDoor$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/SpecialDoor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/SplashScreen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/StorageUnit$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/StorageUnit$StorageUnitInventory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/StorageUnit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/TextBox.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/TransitionEvent$FadeOut.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/TransitionEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/TutorialDialogue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/data.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/saveFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/saveFile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Interactable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/Interactable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/LivingRoom.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/LivingRoom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/MainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/MultiPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/MultiPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Player$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/Player$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Player$Inventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/Player$Inventory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Roommate$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/Roommate$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/Roommate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/Roommate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/ScreenChangeButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/ScreenChangeButton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/SpecialDoor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/SpecialDoor$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/SpecialDoor$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/SpecialDoor$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/SpecialDoor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/SpecialDoor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/StorageUnit$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/StorageUnit$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/StorageUnit$StorageUnitInventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/StorageUnit$StorageUnitInventory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICS4U ISP/StorageUnit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICS4U ISP/StorageUnit.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AccuracyMinigame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AccuracyMinigame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AliceRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AliceRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AvaRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AvaRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Button.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CarrieRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarrieRoom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Computer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Computer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CraftingStation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CraftingStation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DialogueGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DialogueGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiningRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiningRoom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Door.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ExitMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ExitMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FirstBathroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FirstBathroom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameplayRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameplayRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Hallway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hallway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Highscores.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HitBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HitBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HostApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HostApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InstructionsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InstructionsMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Interactable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interactable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InventoryGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InventoryGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Kitchen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kitchen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Level.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LivingRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LivingRoom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PauseMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PauseMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MultiPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultiPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PouringMinigame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PouringMinigame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recipe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Roommate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Roommate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SaveSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScissorsMinigame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScissorsMinigame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ScreenChangeButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScreenChangeButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScreenPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScreenPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SecondBathroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SecondBathroom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SpecialDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SpecialDoor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SplashScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SplashScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StorageUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StorageUnit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextBox.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TransitionEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransitionEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TutorialDialogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TutorialDialogue.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -200,7 +130,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JAR Application.ICS4U ISP.jar">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ICS4U ISP" />
@@ -224,8 +154,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JAR Application.ICS4U ISP.jar" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JAR Application.ICS4U ISP.jar" />
         <item itemvalue="Application.NewMain" />
       </list>
     </recent_temporary>
@@ -294,7 +224,7 @@
       <workItem from="1592260160510" duration="107000" />
       <workItem from="1592319871603" duration="889000" />
       <workItem from="1592366731734" duration="181000" />
-      <workItem from="1592421334388" duration="60482000" />
+      <workItem from="1592421334388" duration="62964000" />
     </task>
     <servers />
   </component>
@@ -345,10 +275,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="321" y="0" key="#com.intellij.unscramble.UnscrambleDialog/0.0.1280.680@0.0.1280.680" timestamp="1592460772420" />
-    <state x="389" y="73" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1592497060921">
+    <state x="389" y="73" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1592507136916">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="389" y="73" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.680@0.0.1280.680" timestamp="1592497060921" />
+    <state x="389" y="73" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.680@0.0.1280.680" timestamp="1592507136916" />
     <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1591640127239">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -357,22 +287,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="300" y="196" key="FileDocumentManager.FileCacheConflict/0.0.1280.680@0.0.1280.680" timestamp="1592205918024" />
-    <state width="618" height="159" key="GridCell.Tab.0.bottom" timestamp="1592506885084">
+    <state width="618" height="74" key="GridCell.Tab.0.bottom" timestamp="1592509181476">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="618" height="159" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592506885084" />
-    <state width="618" height="159" key="GridCell.Tab.0.center" timestamp="1592506885084">
+    <state width="618" height="74" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592509181476" />
+    <state width="618" height="74" key="GridCell.Tab.0.center" timestamp="1592509181476">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="618" height="159" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1592506885084" />
-    <state width="618" height="159" key="GridCell.Tab.0.left" timestamp="1592506885083">
+    <state width="618" height="74" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1592509181476" />
+    <state width="618" height="74" key="GridCell.Tab.0.left" timestamp="1592509181476">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="618" height="159" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1592506885083" />
-    <state width="618" height="159" key="GridCell.Tab.0.right" timestamp="1592506885084">
+    <state width="618" height="74" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1592509181476" />
+    <state width="618" height="74" key="GridCell.Tab.0.right" timestamp="1592509181476">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="618" height="159" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1592506885084" />
+    <state width="618" height="74" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1592509181476" />
     <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1592462609292">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -413,10 +343,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="93" y="93" width="1095" height="495" key="dock-window-1/0.0.1280.680@0.0.1280.680" timestamp="1590507739334" />
-    <state x="330" y="139" width="612" height="536" key="find.popup" timestamp="1592506532903">
+    <state x="330" y="139" width="612" height="536" key="find.popup" timestamp="1592508428945">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="330" y="139" width="612" height="536" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1592506532903" />
+    <state x="330" y="139" width="612" height="536" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1592508428945" />
     <state x="91" y="0" key="new project wizard" timestamp="1592238380027">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

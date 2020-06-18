@@ -45,11 +45,7 @@ public abstract class Interactable extends HitBox
         y += Player.playerHitboxMiddleOffset();
         int xOffset = Math.max(0, Math.max(x - getXEnd(), getXStart() - x));
         int yOffset = Math.max(0, Math.max(y - getYEnd(), getYStart() - y));
-        if(xOffset + yOffset <= 200)
-        {
-            return true;
-        }
-        return false;
+        return xOffset + yOffset <= 200;
     }
 
     @Override

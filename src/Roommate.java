@@ -51,7 +51,7 @@ public class Roommate extends StorageUnit
     public void whenInteractedWith()
     {
         // choosing a line to say
-        String line = "";
+        String line;
         if(inventoryContainsImportantItem(getStorage()))
         {
             int random = (int) (Math.random() * specialItemResponses.length);

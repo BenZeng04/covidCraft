@@ -22,7 +22,7 @@ public abstract class GameplayRoom extends ScreenPanel
     /**
      * Background of the room
      */
-    private Image bg, objective;
+    private Image bg;
 
     /**
      * The player inside of this specific room
@@ -65,11 +65,10 @@ public abstract class GameplayRoom extends ScreenPanel
             addComponent(thisPlayer);
             bg = getRoomBackground();
             initialized = true;
-            objective = gm.getLevel(0).getObjective().ICON;
         }
         Level level = gm.getLevel(gm.getCurrentLevel());
         // Displaying the objective.
-        objective = level.getObjective().ICON; // game current level
+        Image objective = level.getObjective().ICON; // game current level
         g.drawImage(bg, 0, 0, 1080, 720, null);
         g.setColor(new Color(255, 255, 255, 125));
         g.fillOval(945, 60, 110, 110);

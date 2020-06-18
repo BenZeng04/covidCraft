@@ -15,7 +15,7 @@ public class TutorialDialogue extends DialogueGUI
      */
     public static void startTutorial(GameplayRoom room)
     {
-        TutorialDialogue dialogueList[] =
+        TutorialDialogue[] dialogueList =
             {
                 new TutorialDialogue("Hello! Welcome to covidCraft!"),
                 new TutorialDialogue("Each round’s objective is to craft some sort of \"ultimate item\". This item will be displayed at the top right corner of the screen."),

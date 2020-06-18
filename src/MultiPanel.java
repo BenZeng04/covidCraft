@@ -7,7 +7,6 @@
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 import java.util.HashMap;
 
 /**
@@ -116,14 +115,4 @@ public class MultiPanel extends JPanel
         return ((MultiPanel) currentScreen).getLeaf(); // The current screen is NOT a leaf node (The current screen contains multiple screens that can be switched and displayed)
     }
 
-    public HashMap<String, JPanel> IDtoJPanel() {
-        return map;
-    }
-    public HashMap<JPanel, String> JPaneltoID() {
-        HashMap<JPanel, String> reverse = new HashMap<>();
-        for (String x : map.keySet()) {
-            reverse.put(map.get(x), x);
-        }
-        return reverse;
-    }
 }

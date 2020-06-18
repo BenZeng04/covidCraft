@@ -28,7 +28,7 @@ public class Item
     /**
      * Static map to map IDs to specific items
      */
-    public static HashMap<Integer, Item> IDtoItem = new HashMap<Integer, Item>();
+    public static HashMap<Integer, Item> IDtoItem = new HashMap<>();
     /**
      * Constants for all items in the game
      */
