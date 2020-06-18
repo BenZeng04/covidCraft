@@ -5,6 +5,8 @@
  * Implementation of the first few basic screens in the program.
  */
 
+import javafx.stage.Screen;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -21,7 +23,7 @@ import java.io.IOException;
 public class InstructionsMenu extends ScreenPanel
 {
     private Image bg;
-    private Button toMain;
+    private ScreenChangeButton toMain;
 
     public InstructionsMenu()
     {
@@ -30,7 +32,7 @@ public class InstructionsMenu extends ScreenPanel
         }
         catch(IOException e) {
         }
-        toMain= new Button("MainMenu",340,630,400,60,5);
+        toMain= new ScreenChangeButton("MainMenu",340,630,400,60,5);
         toMain.setText("Done",500,670,30,Color.white);
         toMain.setColor(Color.GRAY,Color.BLACK,Color.WHITE);
         addComponent(toMain);

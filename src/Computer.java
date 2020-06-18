@@ -22,7 +22,7 @@ public class Computer extends Interactable
         {
             getGame().setComputerUsed(true);
             // Tutorial dialogue box pops up if user never opened a computer
-            addComponent(new DialogueGUI("This is a computer! In here, you can look up all the recipes", "for every item in the game! Make advantage of it!")
+            addComponent(new DialogueGUI("This is a computer! In here, you can look up all the recipes for every item in the game! Make advantage of it!")
             {
                 @Override
                 public void whenExited()
@@ -49,6 +49,7 @@ public class Computer extends Interactable
         private Recipe[] levelRecipes;
         private boolean initialize;
         private int startY;
+        private int startX;
 
         private String title;
 
@@ -70,30 +71,66 @@ public class Computer extends Interactable
             if(initialize){
                 gm= (Game) getParentScreen().getParent(); // game
                 userInventory= gm.getInventory(); // user inventory
-                levelRecipes= new Level(gm.getLevel()).getRecipes(); // Recipes for this level
+                levelRecipes= gm.getLevel(gm.getCurrentLevel()).getRecipes(); // Recipes for this level
                 initialize = false;
             }
 
-            startY= 250;
             g.setColor(new Color(0, 0, 0, 114));
             g.fillRect(0,0,1080,720);
             g.drawImage(comp_bg,140,150, WIDTH, HEIGHT,null);
-            for(int i= 0; i < levelRecipes.length; i++) {
+            // computer screen
+            startY= 250;
+            for(int i= 0; i < levelRecipes.length; i++) { // loops through all recipes
+                boolean product= false;
+                for(Item userItem: userInventory)
+                {
+                    if(userItem != null && userItem.ID == levelRecipes[i].getID()) {
+                        product= true;
+                        break;
+                    }
+                }
+
+                if(product)
+                g.setColor(Color.GREEN); // in inventory
+                else
+                    g.setColor(Color.RED); // not in inventory
+
+                g.fillRect(170,startY-20,20,20);
                 g.setColor(Color.WHITE);
-                g.setFont(new Font("monospaced", Font.BOLD, 25)); // change font
+                g.drawRect(170,startY-20,20,20);
+                g.setFont(new Font("monospaced", Font.BOLD, 25));
                 if (i == 0)
                     title = "OBJECTIVE: ";
                 else
                     title = "Sub-Task: ";
-                g.drawString(title + levelRecipes[i].getName(), 160, startY);
+                // recipe
+                g.drawString(title + levelRecipes[i].getName(), 200, startY); // title
                 startY+= 30;
+                startX= 170;
+
                 g.setFont(new Font("monospaced", Font.PLAIN, 15));
-                int startX= 180;
-                for(int a= 0; a< levelRecipes[i].getIngredientIDs().size(); a++){ // recipes
-                    g.drawString(levelRecipes[i].getDictionary().get(levelRecipes[i].getIngredientIDs().get(a)) + "+ ",startX,startY);
-                    startX+= 80;
+                for(int a= 0; a< levelRecipes[i].getIngredientIDs().size(); a++){ // all items in recipes
+                    if(product)
+                        g.setColor(Color.white);
+                    else {
+                        g.setColor(Color.RED); // not in inventory
+                        for (Item userItem : userInventory) {
+                            if (userItem != null && userItem.ID == levelRecipes[i].getIngredientIDs().get(a)) {
+                                g.setColor(Color.GREEN); // in inventory
+                                break;
+                            }
+                        }
+                    }
+                    String itemName= levelRecipes[i].getDictionary().get(levelRecipes[i].getIngredientIDs().get(a));
+                    g.drawString(itemName,startX,startY);
+                    startX+= itemName.length() * 9;
+                    if(a != levelRecipes[i].getIngredientIDs().size()-1) {
+                        g.setColor(Color.WHITE);
+                        g.drawString(" + ",startX,startY);
+                        startX+= 27;
+                    }
                 }
-                startY+= 20;
+                startY+= 40;
             }
         }
 

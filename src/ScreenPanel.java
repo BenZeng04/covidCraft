@@ -120,6 +120,7 @@ public class ScreenPanel extends JPanel
         }
         mouseHeld = true;
         lastMouse = event;
+        System.out.println(event.getX() + " " + event.getY());//DELETE
         clearPending();
     }
 

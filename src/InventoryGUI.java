@@ -36,6 +36,11 @@ public abstract class InventoryGUI extends ScreenComponent
      */
     public final static int ITEM_SPACING = ITEM_SIZE * 6 / 5;
 
+    public InventoryGUI()
+    {
+        super(1000);
+        selectedItemIndex = -1;
+    }
     /**
      * Private method to draw an item border
      * @param position the position
@@ -61,9 +66,28 @@ public abstract class InventoryGUI extends ScreenComponent
         {
             final int CONSTANT_OFFSET = ITEM_SIZE * 4 / 10;
             g.drawImage(item.ICON, position.getX() - CONSTANT_OFFSET, position.getY() - CONSTANT_OFFSET, CONSTANT_OFFSET * 2, CONSTANT_OFFSET * 2, null);
-            if(HitBox.pointRectCollision(mouseLocation.getX(), mouseLocation.getY(), position.getX() - CONSTANT_OFFSET, position.getY() - CONSTANT_OFFSET, CONSTANT_OFFSET * 2, CONSTANT_OFFSET * 2))
-            {
-                // Draw the item description
+            if(HitBox.pointRectCollision(position.getX() - CONSTANT_OFFSET, position.getY() - CONSTANT_OFFSET, CONSTANT_OFFSET * 2, CONSTANT_OFFSET * 2, mouseLocation.getX(), mouseLocation.getY())) {
+                // Item description HERE
+                g.setColor(Color.WHITE);
+                g.setFont(new Font("monospaced", Font.BOLD, 20));
+                g.drawString(item.NAME, 800, position.getY());
+                g.setFont(new Font("monospaced", Font.PLAIN, 15));
+                String currentLine = "";
+                int lineCount = 0;
+                String[] words = item.DESCRIPTION.split(" ");
+                for(int i = 0; i < words.length; i++)
+                {
+                    if(currentLine.length() + words[i].length() >= 25)
+                    {
+                        g.drawString(currentLine, 800, position.getY()+30+lineCount*15);
+                        currentLine = "";
+                        lineCount++;
+                    }
+                    currentLine += words[i] + " ";
+                }
+                if (currentLine.length()>0) {
+                    g.drawString(currentLine,800,position.getY()+30+lineCount*15);
+                }
             }
         }
     }
@@ -72,29 +96,6 @@ public abstract class InventoryGUI extends ScreenComponent
      * The current selected item when using the inventory GUI.
      */
     private int selectedItemIndex;
-    /**
-     * The items inside of the inventory used by the GUI.
-     */
-    private Item[] inventory;
-
-    /**
-     * Default constructor.
-     */
-    public InventoryGUI()
-    {
-        this(null);
-    }
-
-    /**
-     * Constructor that initializes inventory.
-     * @param inventory the inventory
-     */
-    public InventoryGUI(Item[] inventory)
-    {
-        super(1000); // Super high layer
-        this.setInventory(inventory);
-        selectedItemIndex = -1;
-    }
 
     @Override
     public void draw(Graphics g)
@@ -105,17 +106,18 @@ public abstract class InventoryGUI extends ScreenComponent
         Position mouseLocation = new Position(getParentScreen().getMouseX(), getParentScreen().getMouseY());
         int count = 0;
         // Drawing the items
-        for(Item item: inventory)
+        for(int i = 0; i < size(); i++)
         {
+            Item item = get(i);
             drawItemBorder(positions[count], g);
-            if(selectedItemIndex == -1 || item != inventory[selectedItemIndex])
+            if(selectedItemIndex == -1 || i != selectedItemIndex)
                 drawItemIcon(item, positions[count], mouseLocation, g);
             count++;
         }
 
         // Drawing the selected item if there is one
         if(selectedItemIndex != -1)
-            drawItemIcon(inventory[selectedItemIndex], mouseLocation, mouseLocation, g);
+            drawItemIcon(get(selectedItemIndex), mouseLocation, mouseLocation, g);
     }
     @Override
     public void keyPressed(KeyEvent ke)
@@ -135,15 +137,14 @@ public abstract class InventoryGUI extends ScreenComponent
             {
                 if(selectedItemIndex != -1)
                 {
-                    boolean emptySpot = inventory[i] == null;
+                    boolean emptySpot = get(i) == null;
                     // Swap the items.
-                    Item temp = inventory[i];
-                    inventory[i] = inventory[selectedItemIndex];
-                    inventory[selectedItemIndex] = temp;
-                    inventoryUpdateEvent(getInventory());
-                    if(emptySpot) selectedItemIndex = -1;
+                    Item temp = get(i);
+                    set(i, get(selectedItemIndex));
+                    set(selectedItemIndex, temp);
+                    if(emptySpot || selectedItemIndex == i) selectedItemIndex = -1;
                 }
-                else if(inventory[i] != null) selectedItemIndex = i;
+                else if(get(i) != null) selectedItemIndex = i;
             }
         }
         denyComponents();
@@ -156,28 +157,24 @@ public abstract class InventoryGUI extends ScreenComponent
     public abstract Position[] getItemLocations();
 
     /**
-     * Gets called whenever the inventory gets updated. The subclass should utilize the GUI's inventory and update the original inventory accordingly.
-     * @param newInventory the new inventory
+     * Getter for items in the InventoryGUI. Should correspond to the VISIBLE inventory of this GUI (Including both storage and normal player inventory).
+     * @param index the index
+     * @return the item
      */
-    public abstract void inventoryUpdateEvent(Item[] newInventory);
+    public abstract Item get(int index);
 
     /**
-     * Getter for inventory.
-     * @return the inventory
+     * Setter for items in the InventoryGUI. Should correspond to the VISIBLE inventory of this GUI (Including both storage and normal player inventory).
+     * @param index the index
+     * @param item the item
      */
-    public Item[] getInventory()
-    {
-        return inventory;
-    }
+    public abstract void set(int index, Item item);
 
     /**
-     * Setter for inventory.
-     * @param inventory the inventory
+     * Returns the number of item slots in this GUI
+     * @return item slots
      */
-    public void setInventory(Item[] inventory)
-    {
-        this.inventory = inventory;
-    }
+    public abstract int size();
 }
 
 

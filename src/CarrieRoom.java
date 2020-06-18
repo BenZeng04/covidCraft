@@ -5,6 +5,7 @@ import java.io.IOException;
 
 public class CarrieRoom extends GameplayRoom
 {
+    public static final int CARRIE = 16;
     public CarrieRoom()
     {
         addHitBox(new HitBox(0, 10, 0, 1060, 320)); // Wall
@@ -18,7 +19,7 @@ public class CarrieRoom extends GameplayRoom
         addHitBox(new HitBox(0, 420, 220, 530, 390)); //chair
         addHitBox(new HitBox(0, 20, 140, 340, 370)); //furniture at left
         addHitBox(new HitBox(0, 930, 440, 1050, 650)); //telescope
-
+        addHitBox(new Roommate(0, 600, 140, 750, 360, CARRIE, Item.loadImage("Sprites_Humans/Carrie.png"), Item.UTILITYKNIFE));
         addHitBox(new Door(0, 0, 445, 30, 610, "Hallway")); //Door at the left
     }
 

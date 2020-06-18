@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * @author Nathan Lu
  * Revision History:
@@ -7,16 +10,11 @@
  */
 public class StorageUnit extends Interactable
 {
-    private static int currentID;
+    public static HashMap<Integer, StorageUnit> IDToStorageUnit = new HashMap<>();
     private final int INVENTORY_HEIGHT, INVENTORY_WIDTH;
     private final int INVENTORY_SIZE;
     private Item[] storage;
     private int id;
-    public StorageUnit(int layer, int xStart, int yStart, int xEnd, int yEnd, int id)
-    {
-        this(layer, xStart, yStart, xEnd, yEnd, 2, 5, id);
-        this.id = id;
-    }
     public StorageUnit(int layer, int xStart, int yStart, int xEnd, int yEnd, int height, int width, int id)
     {
         super(layer, xStart, yStart, xEnd, yEnd);
@@ -25,6 +23,7 @@ public class StorageUnit extends Interactable
         INVENTORY_SIZE = Player.INVENTORY_SIZE + INVENTORY_HEIGHT * INVENTORY_WIDTH;
         storage = new Item[INVENTORY_HEIGHT * INVENTORY_WIDTH];
         this.id = id;
+        IDToStorageUnit.put(id, this);
     }
     public void whenInteractedWith()
     {
@@ -32,7 +31,7 @@ public class StorageUnit extends Interactable
         {
             getGame().setStorageDeviceUsed(true);
             // Tutorial dialogue box pops up if user never opened their inventory
-            addComponent(new DialogueGUI("This is a storage device! Storage devices can either be used to store items,", "and are where you can find items to use for crafting! Simply drag an item", "from the device down into your inventory.")
+            addComponent(new DialogueGUI("This is a storage device! Storage devices can either be used to store items, and are where you can find items to use for crafting! Simply drag an item from the device down into your inventory.")
             {
                 @Override
                 public void whenExited()
@@ -54,18 +53,33 @@ public class StorageUnit extends Interactable
     public int getID() {
         return id;
     }
+    public boolean hasSpaceLeft()
+    {
+        for(Item item: storage)
+            if(item == null)
+                return true;
+        return false;
+    }
+    public boolean addItem(Item toAdd)
+    {
+        ArrayList<Integer> availibleSlots = new ArrayList<>();
+        for(int i = 0; i < storage.length; i++)
+        {
+            if(storage[i] == null)
+                availibleSlots.add(i);
+        }
+        if(availibleSlots.isEmpty()) return false;
+        int randomIndex = (int) (Math.random() * availibleSlots.size());
+        storage[availibleSlots.get(randomIndex)] = toAdd;
+        return true;
+    }
     private class StorageUnitInventory extends InventoryGUI
     {
-        private Item[] storageUnitInventory;
+        private Item[] storageUnitInventory, playerInventory;
         public StorageUnitInventory(Item[] storageUnitInventory, Item[] playerInventory)
         {
             this.storageUnitInventory = storageUnitInventory; // It is important that the reference gets saved!
-            Item[] combinedInventory = new Item[INVENTORY_SIZE];
-            for(int i = 0; i < playerInventory.length; i++) // first 4 items represent player inventory
-                combinedInventory[i] = playerInventory[i];
-            for(int i = playerInventory.length; i < combinedInventory.length; i++)
-                combinedInventory[i] = storageUnitInventory[i - playerInventory.length];
-            setInventory(combinedInventory);
+            this.playerInventory = playerInventory;
         }
         private int findStart(int middleLocation, int spacing, int count)
         {
@@ -91,13 +105,27 @@ public class StorageUnit extends Interactable
         }
 
         @Override
-        public void inventoryUpdateEvent(Item[] newInventory)
+        public Item get(int index)
         {
-            Item[] playerInventory = getPlayerInventory();
-            for(int i = 0; i < playerInventory.length; i++) // first 4 items represent player inventory
-                playerInventory[i] = newInventory[i];
-            for(int i = playerInventory.length; i < newInventory.length; i++)
-                storageUnitInventory[i - playerInventory.length] = newInventory[i];
+            if(index < playerInventory.length)
+                return playerInventory[index];
+            else
+                return storageUnitInventory[index - playerInventory.length];
+        }
+
+        @Override
+        public void set(int index, Item item)
+        {
+            if(index < playerInventory.length)
+                playerInventory[index] = item;
+            else
+                storageUnitInventory[index - playerInventory.length] = item;
+        }
+
+        @Override
+        public int size()
+        {
+            return playerInventory.length + storageUnitInventory.length;
         }
     }
 }

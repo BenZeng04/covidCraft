@@ -63,16 +63,28 @@ public class Player extends ScreenComponent
             final int START = (int) (Game.GAME_WIDTH / 2 - (ITEM_SPACING * (INVENTORY_SIZE / 2 - 0.5)));
             for(int i = 0; i < 4; i++)
                 ret[i] = new Position(START + ITEM_SPACING * i, Game.GAME_HEIGHT / 2);
-
             return ret;
         }
 
         @Override
-        public void inventoryUpdateEvent(Item[] newInventory)
+        public Item get(int index)
         {
             Item[] originalInventory = ((Game) (getParentScreen().getParent())).getInventory();
-            for(int i = 0; i < originalInventory.length; i++)
-                originalInventory[i] = newInventory[i];
+            return originalInventory[index];
+        }
+
+        @Override
+        public void set(int index, Item item)
+        {
+            Item[] originalInventory = ((Game) (getParentScreen().getParent())).getInventory();
+            originalInventory[index] = item;
+        }
+
+        @Override
+        public int size()
+        {
+            Item[] originalInventory = ((Game) (getParentScreen().getParent())).getInventory();
+            return originalInventory.length;
         }
     }
     public static int playerHitboxMiddleOffset()
@@ -150,12 +162,10 @@ public class Player extends ScreenComponent
         this.y = y;
     }
 
-    /*
     public char getState()
     {
         return state;
     } // getter method- state
-    */
 
     public void setState(char state)
     {
@@ -229,12 +239,11 @@ public class Player extends ScreenComponent
         if(e.getKeyChar() == 'e' || e.getKeyChar() == 'E')
         {
             InventoryGUI inventoryGUI = new Inventory();
-            inventoryGUI.setInventory(game.getInventory());
             if(!game.isInventoryUsed())
             {
                 game.setInventoryUsed(true);
                 // Tutorial dialogue box pops up if user never opened their inventory
-                addComponent(new DialogueGUI("This is your player inventory! Your progress through the game will be", "controlled by the items in here. Feel free to drag items around to rearrange them!")
+                addComponent(new DialogueGUI("This is your player inventory! Your progress through the game will be controlled by the items in here. Feel free to drag items around to rearrange them!")
                 {
                     @Override
                     public void whenExited()
@@ -244,20 +253,26 @@ public class Player extends ScreenComponent
                 });
             }
             else addComponent(inventoryGUI);
-            getParentScreen().simulateKeyRelease();
+            if(currentlyMoving)
+                haltPlayer();
             denyComponents();
         }
         if(e.getKeyCode() == KeyEvent.VK_ESCAPE)
         {
             PauseMenu pm = new PauseMenu();
             addComponent(pm);
-            getParentScreen().simulateKeyRelease();
+            if(currentlyMoving)
+                haltPlayer();
             denyComponents();
         }
         state = e.getKeyChar();
         currentlyMoving = true;
     }
-    private void haltPlayer()
+    public boolean isCurrentlyMoving()
+    {
+        return currentlyMoving;
+    }
+    public void haltPlayer()
     {
         currentlyMoving = false;
         accelerate = 2;

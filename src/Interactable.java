@@ -41,7 +41,7 @@ public abstract class Interactable extends HitBox
         GameplayRoom screen = (GameplayRoom) getParentScreen();
         Player player = screen.getThisPlayer();
         if(canInteract(player.getPlayerX(), player.getPlayerY()))
-            drawOutline((Graphics2D) g);
+            whenInRange((Graphics2D) g);
     }
     @Override
     public void mousePressed(MouseEvent event)
@@ -50,9 +50,9 @@ public abstract class Interactable extends HitBox
         Player player = screen.getThisPlayer();
         if(canInteract(player.getPlayerX(), player.getPlayerY()) && isColliding(event.getX(), event.getY(), 0, 0))
         {
-            // Simulates key and mouse release such that the player doesn't move / stops moving while it's interacting with something!
-            getParentScreen().simulateKeyRelease();
-            getParentScreen().simulateMouseRelease();
+            // Stops the player from moving while it's interacting with something!
+            if(player.isCurrentlyMoving())
+                player.haltPlayer();
             whenInteractedWith();
             denyComponents();
         }
@@ -65,7 +65,7 @@ public abstract class Interactable extends HitBox
     {
         return (Game) getParentScreen().getParent();
     }
-    private void drawOutline(Graphics2D g)
+    public void whenInRange(Graphics2D g)
     {
         g.setColor(Color.WHITE);
         g.setStroke(new BasicStroke(5));

@@ -14,18 +14,19 @@ public class PauseMenu extends ScreenComponent
 {
     private Button[] fromMenu= new Button[2];
     private boolean initialized;
-    static PrintWriter out;
-    static Scanner s = new Scanner(System.in);
-    static StringTokenizer st;
-    static BufferedReader br;
+    private PrintWriter out;
+    private Scanner s = new Scanner(System.in);
+    private StringTokenizer st;
+    private BufferedReader br;
     public PauseMenu()
     {
         super(100);
-        fromMenu[0]= new Button("MainMenu",340,250,400,60,5, 101)
+        fromMenu[0] = new ScreenChangeButton("MainMenu",340,250,400,60,5, 101)
         {
             @Override
             public void buttonPressed(MouseEvent event)
             {
+                getHostPanel().add(new MainMenu(), "MainMenu");
                 super.buttonPressed(event);
                 removeComponent(fromMenu[0]);
                 removeComponent(fromMenu[1]);
@@ -33,7 +34,7 @@ public class PauseMenu extends ScreenComponent
                 saveGame((Game) getParentScreen().getParent());
             }
         };
-        fromMenu[1]= new Button("Gameplay",340,410,400,60,5, 101)
+        fromMenu[1]= new ScreenChangeButton("Gameplay",340,410,400,60,5, 101)
         {
             @Override
             public void buttonPressed(MouseEvent event)
@@ -51,12 +52,11 @@ public class PauseMenu extends ScreenComponent
             out = new PrintWriter (new FileWriter("saveFile.txt"));
         }
         catch(Exception e){};
-        TextBox name = new TextBox(340, 330);
-        addComponent(name);
 
         //printing player inventory
         for (Item x : g.getInventory()) {
-            out.print(x.ID+" ");
+            if(x != null)
+                out.print(x.ID+" ");
         }
         out.println();
         //saving locations of items
@@ -70,13 +70,15 @@ public class PauseMenu extends ScreenComponent
                     int storageID = ((StorageUnit) hb).getID();
                     out.println(storageID);
                     for (Item i : ((StorageUnit) hb).getStorage()) { //record the location and ID of each Item in this StorageUnit
-                        out.println(i.ID);
+                        if(i != null)
+                            out.println(i.ID);
                     }
                     out.println("exit");
                 }
             }
             out.println("exit");
         }
+        out.close();
     }
     @Override
     public void draw(Graphics g)

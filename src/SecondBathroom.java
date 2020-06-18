@@ -5,6 +5,7 @@ import java.io.IOException;
 
 public class SecondBathroom extends GameplayRoom
 {
+    public static int CABINET = 3;
     public SecondBathroom()
     {
         addHitBox(new HitBox(0, 10, 0, 1060, 320)); // Wall
@@ -13,7 +14,7 @@ public class SecondBathroom extends GameplayRoom
         addHitBox(new HitBox(0, 940, 0, 2600, 600)); // Right Border
 
         addHitBox(new HitBox(0, 130, 130, 245, 340)); // Shelves at the left
-        addHitBox(new StorageUnit(0, 240, 180, 375, 340, 0)); // Cabinet at the left
+        addHitBox(new StorageUnit(0, 240, 180, 375, 340, 3, 3, CABINET)); // Washing machine at the left
         addHitBox(new HitBox(0, 390, 250, 460, 330)); // Plant
         addHitBox(new HitBox(0, 800, 80, 950, 460)); // Bathtub
         addHitBox(new HitBox(0, 820, 470, 950, 550)); // Toilet

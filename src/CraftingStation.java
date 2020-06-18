@@ -19,7 +19,7 @@ public class CraftingStation extends StorageUnit {
         {
             getGame().setAnvilUsed(true);
             // Tutorial dialogue box pops up if user never opened their inventory
-            addComponent(new DialogueGUI("This is an anvil! This will be the main device that you will be using to craft!", "Simply put the ingredients in the top column, and click the craft button!")
+            addComponent(new DialogueGUI("This is an anvil! This will be the main device that you will be using to craft! Simply put the ingredients in the top column, and click the craft button!")
             {
                 @Override
                 public void whenExited()
@@ -35,7 +35,7 @@ public class CraftingStation extends StorageUnit {
     {
         super.createGUI();
         // 540, 360 (Centre of the screen)
-        Button craftButton = new Button("",340,330,400,60,5, 1005)
+        ScreenChangeButton craftButton = new ScreenChangeButton("",340,330,400,60,5, 1005)
         {
             @Override
             public void keyPressed(KeyEvent ke)
@@ -47,9 +47,9 @@ public class CraftingStation extends StorageUnit {
             @Override
             public void buttonPressed(MouseEvent event)
             {
-                Item[] storage = getStorage();
+                Item[] storage = getStorage(); // inventory of crafting station
                 Game game = getGame();
-                Level currentLevel = new Level(game.getLevel());
+                Level currentLevel = game.getLevel(game.getCurrentLevel());
                 Recipe[] recipes = currentLevel.getRecipes();
                 ArrayList<Integer> itemIDs = new ArrayList<>();
                 for(Item i: storage) if(i != null) itemIDs.add(i.ID);
@@ -58,13 +58,20 @@ public class CraftingStation extends StorageUnit {
                     if(recipe.canCraft(itemIDs))
                     {
                         Item item = Item.IDtoItem.get(recipe.getID());
+                        if(item == Item.VISORHANDLE)
+                            getHostPanel().add(new AccuracyMinigame(item), "Minigame");
+                        else if(item == Item.FACEMASK)
+                            getHostPanel().add(new ScissorsMinigame(item), "Minigame");
+                        else if(item == Item.SANITIZERGEL)
+                            getHostPanel().add(new PouringMinigame(item), "Minigame");
+
                         ArrayList<Integer> IDs = recipe.getIngredientIDs(); // removing from storage
 
                         for(int i = 0; i < storage.length; i++)
                         {
                             if(storage[i] != null && IDs.contains(storage[i].ID))
                             {
-                                IDs.remove(storage[i].ID);
+                                IDs.remove((Integer) storage[i].ID);
                                 storage[i] = null;
                             }
                             if(storage[i] == null)
@@ -73,6 +80,7 @@ public class CraftingStation extends StorageUnit {
                                 item = null; // Sets the first empty slot to the item. (There should guaranteed be at least 1)
                             }
                         }
+                        getHostPanel().displayPanel("Minigame");
                         return;
                     }
                 }

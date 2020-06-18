@@ -1,0 +1,65 @@
+1 19 5 2 
+Living Room
+0
+3
+exit
+1
+exit
+2
+11
+7
+6
+exit
+exit
+Dining Room
+4
+exit
+5
+exit
+6
+exit
+exit
+Kitchen
+10
+exit
+11
+exit
+12
+17
+10
+exit
+13
+8
+exit
+exit
+Hallway
+exit
+Carrie's Room
+16
+4
+exit
+exit
+Alice's Room
+14
+exit
+15
+exit
+99
+exit
+exit
+Ava's Room
+exit
+Bathroom 1
+7
+exit
+8
+exit
+9
+exit
+exit
+Bathroom 2
+3
+18
+9
+exit
+exit

@@ -13,6 +13,8 @@ import java.util.ArrayList;
  */
 public class LivingRoom extends GameplayRoom
 {
+    // Constants for IDs of storage units
+    public static final int DRESSER = 0, DESK = 1, TV_DRAWER = 2;
     public LivingRoom()
     {
         addHitBox(new HitBox(0, 10, 0, 1060, 320)); // Wall
@@ -20,10 +22,10 @@ public class LivingRoom extends GameplayRoom
         addHitBox(new HitBox(0, 0, 660, 1060, 1000)); // Bottom Border
         addHitBox(new HitBox(0, 1060, 0, 2600, 670)); // Right Border
 
-        addHitBox(new StorageUnit(0, 20, 260, 170, 390, 0)); // Dresser at the left side
-        addHitBox(new StorageUnit(0, 175, 260, 360, 390, 1)); // Desk at the left side
+        addHitBox(new StorageUnit(0, 20, 260, 170, 390, 2, 5, DRESSER)); // Dresser at the left side
+        addHitBox(new StorageUnit(0, 175, 260, 360, 390, 1, 3, DESK)); // Desk at the left side
         addHitBox(new HitBox(0, 360, 190, 420, 340)); // Tall potted plant near the TV
-        addHitBox(new StorageUnit(0, 440, 250, 640, 390, 2)); // TV table
+        addHitBox(new StorageUnit(0, 440, 250, 640, 390, 2, 3, TV_DRAWER)); // TV table
         addHitBox(new HitBox(0, 650, 150, 730, 360)); // Lamp beside TV
         addHitBox(new HitBox(0, 930, 231, 1050, 350)); // Bookcase
         addHitBox(new HitBox(0, 410, 460, 670, 600)); // Couch
@@ -41,7 +43,7 @@ public class LivingRoom extends GameplayRoom
     @Override
     public int getStartY()
     {
-        return 324;
+        return 520;
     }
 
     @Override

@@ -52,17 +52,15 @@ public class Recipe
         this.ingredientIDs = ingredients;
     }
 
-    public boolean canCraft(ArrayList<Integer> items) // if item is craftable
+    public boolean canCraft(ArrayList<Integer> items) // if item is craftable TODO
     {
-        int matchingItems = 0;
         for(int x = 0; x < items.size(); x++)
-        {
-            if(ingredientIDs.contains(items.get(x)))
-            {
-                matchingItems++;
-            }
-        }
-        return matchingItems >= ingredientIDs.size();
+            if(!ingredientIDs.contains(items.get(x)))
+                return false;
+        for(int x = 0; x < ingredientIDs.size(); x++)
+            if(!items.contains(ingredientIDs.get(x)))
+                return false;
+        return true;
     }
 
     public boolean itemsNeeded(ArrayList<Integer> items) // what items are needed

@@ -17,7 +17,7 @@ public class TextBox extends Button{
     }
     public TextBox(int x, int y, int length, int height, int borderThickness, int layer) // creates textbox outline
     {
-        super("MainMenu", x, y, length, height, borderThickness, layer);
+        super(x, y, length, height, borderThickness, layer);
         input="";
     }
     public TextBox(int x, int y) // simplified constructor
@@ -27,15 +27,6 @@ public class TextBox extends Button{
         this.setColor(Color.GRAY, Color.BLACK, Color.WHITE);
         this.setInputBox(x+40, x+60, 320, 40, Color.DARK_GRAY, Color.WHITE);
         input="";
-    }
-    public void setColor(Color color, Color borderStay, Color borderChange) // sets color and highlight of the button
-    {
-        super.setColor(color, borderStay, borderChange);
-    }
-
-    public void setText(String text, int textX, int textY, int size, Color color) // text + text placement
-    {
-        super.setText(text, textX, textY, size, color);
     }
     public void setInputBox(int inputBoxX, int inputBoxY, int inputBoxLength, int inputBoxWidth, Color inputBoxColour, Color inputBoxTextColour) // text + text placement
     {
@@ -52,7 +43,7 @@ public class TextBox extends Button{
         g.setColor(inputBoxTextColour);
         g.drawString(input, inputBoxX+10, inputBoxY+inputBoxWidth-10);
     }
-    public void mousePressed(MouseEvent event)
+    public void buttonPressed (MouseEvent event)
     {
         if(super.isInArea(event))
             currentlyTyping = true;

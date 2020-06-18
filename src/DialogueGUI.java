@@ -15,6 +15,7 @@ public abstract class DialogueGUI extends ScreenComponent
     private static final Font TEXT_FONT = new Font("monospaced", Font.BOLD, 20);
     private static final Font SMALL_FONT = new Font("monospaced", Font.PLAIN, 12);
     private static final Image DIALOGUE_BOX;
+    private boolean displayAtTop;
     static // Initialize the dialogue box
     {
         Image image;
@@ -28,29 +29,53 @@ public abstract class DialogueGUI extends ScreenComponent
         }
         DIALOGUE_BOX = image;
     }
-    private String[] textLines;
-    public DialogueGUI(String... textLines)
+    private String text;
+    public DialogueGUI(String text)
+    {
+        this(false, text);
+    }
+    public DialogueGUI(boolean displayAtTop, String text)
     {
         super(1005); // High layer that is slightly above InventoryGUI.
-        this.textLines = textLines;
+        this.text = text;
+        this.displayAtTop = displayAtTop;
     }
 
     @Override
     public void draw(Graphics g)
     {
+        if(getParentScreen() instanceof GameplayRoom)
+        {
+            Player player = ((GameplayRoom) getParentScreen()).getThisPlayer();
+            if(player.isCurrentlyMoving())
+                player.haltPlayer();
+        }
         final int WIDTH = Game.GAME_WIDTH, HEIGHT = Game.GAME_HEIGHT;
         final int OFFSET = 40;
+        final int Y_OFFSET = displayAtTop? -400: 0;
         final int BOX_WIDTH = WIDTH - OFFSET * 2, BOX_HEIGHT = BOX_WIDTH / 5;
-        g.drawImage(DIALOGUE_BOX, OFFSET, HEIGHT - OFFSET - BOX_HEIGHT, BOX_WIDTH, BOX_HEIGHT, null);
+        g.drawImage(DIALOGUE_BOX, OFFSET, HEIGHT - OFFSET - BOX_HEIGHT + Y_OFFSET, BOX_WIDTH, BOX_HEIGHT, null);
         g.setFont(TEXT_FONT);
         g.setColor(Color.BLACK);
-        for(int i = 0; i < textLines.length; i++)
+        String[] words = text.split(" ");
+        String currentLine = "";
+        int lineCount = 0;
+        for(int i = 0; i < words.length; i++)
         {
-            final int POSITION = HEIGHT - OFFSET - BOX_HEIGHT + i * 24;
-            g.drawString(textLines[i], OFFSET + 30, POSITION + 50);
+            if(currentLine.length() + words[i].length() >= 75)
+            {
+                final int POSITION = HEIGHT - OFFSET - BOX_HEIGHT + lineCount * 24;
+                g.drawString(currentLine, OFFSET + 30, POSITION + 50 + Y_OFFSET);
+                currentLine = "";
+                lineCount++;
+            }
+            currentLine += words[i] + " ";
         }
+        if(currentLine.length() > 0)
+            g.drawString(currentLine,OFFSET + 30, HEIGHT - OFFSET - BOX_HEIGHT + lineCount * 24 + 50 + Y_OFFSET);
+
         g.setFont(SMALL_FONT);
-        g.drawString("- CLICK TO CONTINUE -", OFFSET + 430, HEIGHT - OFFSET - 30);
+        g.drawString("- CLICK TO CONTINUE -", OFFSET + 430, HEIGHT - OFFSET - 30 + Y_OFFSET);
     }
 
     @Override

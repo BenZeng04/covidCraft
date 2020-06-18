@@ -27,7 +27,7 @@ public class AvaRoom extends GameplayRoom
     @Override
     public int getStartX()
     {
-        return 400;
+        return 600;
     }
 
     @Override

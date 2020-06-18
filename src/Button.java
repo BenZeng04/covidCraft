@@ -5,21 +5,19 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 
 public class Button extends ScreenComponent{
-    private String toScreen;
     private int x, y, length, height, borderThickness;
     private Color color,borderStay, borderChange;
     private String text;
     private int textX, textY, size;
     private Color textColor;
 
-    public Button(String toScreen, int x, int y, int length, int height, int borderThickness) // creates button outline
+    public Button(int x, int y, int length, int height, int borderThickness) // creates button outline
     {
-        this(toScreen, x, y, length, height, borderThickness, 5);
+        this(x, y, length, height, borderThickness, 5);
     }
-    public Button(String toScreen, int x, int y, int length, int height, int borderThickness, int layer) // creates button outline
+    public Button(int x, int y, int length, int height, int borderThickness, int layer) // creates button outline
     {
         super(layer);
-        this.toScreen= toScreen;
         this.x= x;
         this.y= y;
         this.length= length;
@@ -60,7 +58,7 @@ public class Button extends ScreenComponent{
     }
     public void buttonPressed(MouseEvent event)
     {
-        addComponent(new TransitionEvent(toScreen));
+
     }
 
     public void draw(Graphics g)
