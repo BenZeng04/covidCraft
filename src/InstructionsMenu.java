@@ -22,7 +22,13 @@ import java.io.IOException;
 
 public class InstructionsMenu extends ScreenPanel
 {
+    /**
+     * Background
+     */
     private Image bg;
+    /**
+     * Button to return back to MainMenu
+     */
     private ScreenChangeButton toMain;
 
     public InstructionsMenu()
@@ -41,14 +47,6 @@ public class InstructionsMenu extends ScreenPanel
     @Override
     public void draw(Graphics g)
     {
-        g.drawImage(bg,0, 0, null);
+        g.drawImage(bg,0, 0, 1080, 720, null);
     }
-
-    /*
-    @Override
-    public void mousePressed(MouseEvent e) {
-        getParent().displayPanel("MenuScreen");
-        denyComponents();
-    }
-     */
 }

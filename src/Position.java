@@ -1,4 +1,7 @@
 /**
+ * @author Ben Zeng
+ * Revision History:
+ *  - June 9, 2020 ~Created Ben Zeng
  * A helper class that stores x and y positions on the screen, specifically for such GUI.
  */
 public class Position

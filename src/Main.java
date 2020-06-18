@@ -12,6 +12,8 @@ import javax.swing.*;
  * @author Ben Zeng, Oscar Han, Nathan Lu
  * Revision History:
  * - May 26, 2020: Created ~Ben Zeng. Time Spent: 10m
+ * - May 31, 2020: Updated ~Ben Zeng. Time Spent: 5m
+ * - June 11, 2020: Updated ~Ben Zeng. Time Spent: 5m
  * @version 1
  */
 public class Main
@@ -26,17 +28,12 @@ public class Main
         JFrame frame = new JFrame();
         HostApplication mainApplication = new HostApplication();
         frame.setContentPane(mainApplication);
-        mainApplication.add(new ScissorsMinigame(null), "minigametest");
-        mainApplication.add(new AccuracyMinigame(null), "tester");
         mainApplication.add(new SplashScreen(),"SplashScreen");
         mainApplication.add(new MainMenu(), "MainMenu");
         // Gameplay will be initialized in MainMenu.
         mainApplication.add(new InstructionsMenu(),"InstructionsMenu");
-        mainApplication.add(new Highscores(),"HighScoresMenu");
         mainApplication.add(new ExitMenu(),"ExitMenu");
-        //mainApplication.displayPanel("SplashScreen");
-        mainApplication.displayPanel("tester");
-        // mainApplication.displayPanel("minigametest");
+        mainApplication.displayPanel("SplashScreen");
         frame.setSize(1080, 720);
         frame.setTitle("covidCraft");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

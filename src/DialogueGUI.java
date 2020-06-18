@@ -1,3 +1,10 @@
+/**
+ * Ben Zeng, Oscar Han, Nathan Lu
+ * 5/26/2020
+ * Ms. Krasteva
+ * Implementation of more advanced elements of gameplay.
+ */
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -5,17 +12,28 @@ import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
 
-/*
-- A text box that appears on the screen.
-- Disappears whenever the player presses their mouse.
-- Event triggered when the dialogue is over, such as giving player an item
+/**
+ * @author Ben Zeng
+ * Revision History:
+ * - June 11, 2020: Created ~Ben Zeng. Time Spent: 1h
+ * The class representing a dialogue pop-up on the screen.
+ * @version 1
  */
 public abstract class DialogueGUI extends ScreenComponent
 {
+    /**
+     * Constant for text font
+     */
     private static final Font TEXT_FONT = new Font("monospaced", Font.BOLD, 20);
+    /**
+     * Smaller font at the bottom
+     */
     private static final Font SMALL_FONT = new Font("monospaced", Font.PLAIN, 12);
+    /**
+     * The image for dialogue boxes
+     */
     private static final Image DIALOGUE_BOX;
-    private boolean displayAtTop;
+
     static // Initialize the dialogue box
     {
         Image image;
@@ -29,11 +47,30 @@ public abstract class DialogueGUI extends ScreenComponent
         }
         DIALOGUE_BOX = image;
     }
+
+    /**
+     * Text for the dialogue
+     */
     private String text;
+    /**
+     * Whether or not the dialogue is displayed at the top or bottom
+     */
+    private boolean displayAtTop;
+
+    /**
+     * Default constructor
+     * @param text the text
+     */
     public DialogueGUI(String text)
     {
         this(false, text);
     }
+
+    /**
+     * More advanced constructor
+     * @param displayAtTop
+     * @param text
+     */
     public DialogueGUI(boolean displayAtTop, String text)
     {
         super(1005); // High layer that is slightly above InventoryGUI.
@@ -48,7 +85,7 @@ public abstract class DialogueGUI extends ScreenComponent
         {
             Player player = ((GameplayRoom) getParentScreen()).getThisPlayer();
             if(player.isCurrentlyMoving())
-                player.haltPlayer();
+                player.haltPlayer(); // Player should not be able to move while this dialogue is open
         }
         final int WIDTH = Game.GAME_WIDTH, HEIGHT = Game.GAME_HEIGHT;
         final int OFFSET = 40;
@@ -92,5 +129,8 @@ public abstract class DialogueGUI extends ScreenComponent
         denyComponents(); // Make sure that key presses do NOT get triggered.
     }
 
-    public abstract void whenExited(); // Event that gets triggered upon exiting.
+    /**
+     * Represents the Event that gets triggered upon exiting.
+     */
+    public abstract void whenExited();
 }

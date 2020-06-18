@@ -64,6 +64,7 @@ public class ScreenPanel extends JPanel
                 // Calls the overridable mousePressEvent function.
                 mousePressEvent(event);
             }
+
             @Override
             public void mouseReleased(MouseEvent event)
             {
@@ -120,13 +121,11 @@ public class ScreenPanel extends JPanel
         }
         mouseHeld = true;
         lastMouse = event;
-        System.out.println(event.getX() + " " + event.getY());//DELETE
         clearPending();
     }
 
     /**
      * Used as an additional mousePressed function, run prior to any of the components. Meant to be overridden, but not necessary.
-     *
      */
     public void mousePressed(MouseEvent event)
     {
@@ -138,7 +137,8 @@ public class ScreenPanel extends JPanel
     public final void mouseReleaseEvent(MouseEvent event)
     {
         clearPending();
-        if(mouseHeld) mouseReleased(event);
+        if(mouseHeld)
+            mouseReleased(event);
         Collections.sort(components);
         Collections.reverse(components); // Reverses so that components near the top are given the trigger first.
         for(ScreenComponent component: components)
@@ -186,7 +186,6 @@ public class ScreenPanel extends JPanel
 
     /**
      * Used as an additional keyPressed function, run prior to any of the components. Meant to be overridden, but not necessary.
-     *
      */
     public void keyPressed(KeyEvent event)
     {
@@ -198,7 +197,8 @@ public class ScreenPanel extends JPanel
     public final void keyReleaseEvent(KeyEvent event)
     {
         clearPending();
-        if(keyHeld) keyReleased(event);
+        if(keyHeld)
+            keyReleased(event);
         Collections.sort(components);
         Collections.reverse(components);
         for(ScreenComponent component: components)
@@ -287,21 +287,10 @@ public class ScreenPanel extends JPanel
         }
     }
 
-    public boolean isMouseHeld()
-    {
-        return mouseHeld;
-    }
-
-    public boolean isKeyHeld()
-    {
-        return keyHeld;
-    }
-
-    public char getKey()
-    {
-        return key.getKeyChar();
-    }
-
+    /**
+     * Returns the x-position of the mouse
+     * @return the x-position
+     */
     public int getMouseX()
     {
         // Getting the current mouse location. https://stackoverflow.com/questions/12396066/how-to-get-location-of-a-mouse-click-relative-to-a-swing-window
@@ -310,27 +299,15 @@ public class ScreenPanel extends JPanel
         return (int) mouseLocation.getX();
     }
 
+    /**
+     * Returns the y-position of the mouse
+     * @return the y-position
+     */
     public int getMouseY()
     {
         // Getting the current mouse location. https://stackoverflow.com/questions/12396066/how-to-get-location-of-a-mouse-click-relative-to-a-swing-window
         Point mouseLocation = MouseInfo.getPointerInfo().getLocation();
         SwingUtilities.convertPointFromScreen(mouseLocation, this);
         return (int) mouseLocation.getY();
-    }
-
-    /**
-     * Simulates a key release using the most recently pressed key
-     */
-    public void simulateKeyRelease()
-    {
-        pendingKeyRelease = true;
-    }
-
-    /**
-     * Simulates a mouse release using the most recent mouse press
-     */
-    public void simulateMouseRelease()
-    {
-        pendingMouseRelease = true;
     }
 }

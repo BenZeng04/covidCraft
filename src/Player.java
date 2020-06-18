@@ -1,52 +1,32 @@
-/**
- * Ben Zeng, Oscar Han, Nathan Lu
- * 5/26/2020
- * Ms. Krasteva
- * Implementation of generic / abstract classes that will be relevant for gameplay.
- *
- * @author Oscar Han
- * Revision History:
- * - Jun 6, 2020: Created ~Oscar Han. Time Spent: ~m
- * The class representing player.
- * @version 1
- * @author Oscar Han
- * Revision History:
- * - Jun 6, 2020: Created ~Oscar Han. Time Spent: ~m
- * The class representing player.
- * @version 1
- * @author Oscar Han
- * Revision History:
- * - Jun 6, 2020: Created ~Oscar Han. Time Spent: ~m
- * The class representing player.
- * @version 1
- * @author Oscar Han
- * Revision History:
- * - Jun 6, 2020: Created ~Oscar Han. Time Spent: ~m
- * The class representing player.
- * @version 1
- */
-
-/**
- * @author Oscar Han
- * Revision History:
- * - Jun 6, 2020: Created ~Oscar Han. Time Spent: ~m
- * The class representing player.
- * @version 1
- */
-// https://stackoverflow.com/questions/17865465/how-do-i-draw-an-image-to-a-jpanel-or-jframe
-
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * @author Oscar Han, Ben Zeng
+ * Revision History:
+ * - Jun 8, 2020: ~Ben Zeng Adds the private Inventory class within Player
+ * - Jun 6, 2020: Created ~Oscar Han.
+ * The class representing player.
+ * @version 1
+ */
 public class Player extends ScreenComponent
 {
+    /**
+     * Constants
+     */
     private final static int PLAYER_WIDTH = 300, PLAYER_HEIGHT = 300, PLAYER_HITBOX_WIDTH = 60, PLAYER_HITBOX_HEIGHT = 15;
     public final static int INVENTORY_SIZE = 4;
     public final static int HITBOX_OFFSET = (PLAYER_HEIGHT * 7 / 8 - PLAYER_HITBOX_HEIGHT / 2);
+    /**
+     * X and Y position of player
+     */
     private int x, y;
+    /**
+     * Current state (direction) of the player
+     */
     private char state;
     private char lastState;
     private int motion;
@@ -54,6 +34,9 @@ public class Player extends ScreenComponent
     private Image img;
     private Image[][] sprites;
     private int accelerate;
+    /**
+     * A class that represents the Player inventory.
+     */
     private class Inventory extends InventoryGUI
     {
         @Override
@@ -91,7 +74,12 @@ public class Player extends ScreenComponent
     {
         return HITBOX_OFFSET - PLAYER_HEIGHT / 2 + PLAYER_HITBOX_HEIGHT / 2;
     }
-    public Player(int x, int y) // prob change this so i also take in starting state
+    /**
+     * Constructor for Player- loads all player images and initializes intial position
+     * @param x x position of Player
+     * @param y y position of Player
+     */
+    public Player(int x, int y)
     {
         this.x = x;
         this.y = y;
@@ -99,6 +87,7 @@ public class Player extends ScreenComponent
         lastState= 'd';
         motion= 0;
         accelerate = 2;
+        // intializes Player position and state
         try
         {
             sprites = new Image[][]
@@ -128,6 +117,7 @@ public class Player extends ScreenComponent
                         ImageIO.read(new File("Sprites_Humans/Alice_D_2.png"))
                 }
             };
+            // each possible direction a Player can face also has four separate images that resemble a walking motion when put together
         }
         catch(IOException e)
         {
@@ -145,33 +135,11 @@ public class Player extends ScreenComponent
     {
         return y;
     } // getter method- player Y
-
-    public void setPlayerX(int x)
-    {
-        this.x = x;
-    } // setter method- player X
-
-    public void setPlayerY(int y)
-    {
-        this.y = y;
-    } // setter method- player Y
-
-    public void setPlayerPos(int x, int y) // setter method- player position
-    {
-        this.x = x;
-        this.y = y;
-    }
-
-    public char getState()
-    {
-        return state;
-    } // getter method- state
-
-    public void setState(char state)
-    {
-        this.state = state;
-    } // setter method- state; also changes image
-
+    /**
+     * Checks if any Hitboxes in the current gameplay room would overlap with Player
+     * @param x x position of Player
+     * @param y y position of Player
+     */
     private boolean wouldCollide(int x, int y)
     {
         GameplayRoom room = (GameplayRoom) getParentScreen();
@@ -182,22 +150,20 @@ public class Player extends ScreenComponent
         }
         return false;
     }
-
+    /**
+     * Draws Player and changes status when Player is moving
+     */
     public void draw(Graphics g)
     {
-        // temporary!
         if(currentlyMoving)
             changePlayer(state);
         g.drawImage(img, x - PLAYER_WIDTH / 2, y - PLAYER_HEIGHT / 2, PLAYER_WIDTH, PLAYER_HEIGHT, null);
-        /*
-        try {
-            Thread.sleep(50);
-        }
-        catch(InterruptedException e) { }
-        */
     }
-
-    public void changePlayer(char direction) // move player location and state
+    /**
+     * Changes Player lcoation and state
+     * @param direction The new state of Player- determined by keyPressed
+     */
+    public void changePlayer(char direction)
     {
         final int FRAME_DELAY = 5; // Delay between sprite transitions
         if(direction >= 'A' && direction <= 'Z') direction += 'a' - 'A'; // Convert to lower case
@@ -229,11 +195,12 @@ public class Player extends ScreenComponent
         accelerate++;
         if(accelerate > 7)
             accelerate = 7;
+        // accelerate is used to simulate increased player momentum when walking
         lastState= direction;
     }
 
     @Override
-    public void keyPressed(KeyEvent e) // wasd key listener
+    public void keyPressed(KeyEvent e)
     {
         Game game = (Game) getParentScreen().getParent();
         if(e.getKeyChar() == 'e' || e.getKeyChar() == 'E')
@@ -268,10 +235,16 @@ public class Player extends ScreenComponent
         state = e.getKeyChar();
         currentlyMoving = true;
     }
+    /**
+     * Returns whether Player is currently moving
+     */
     public boolean isCurrentlyMoving()
     {
         return currentlyMoving;
     }
+    /**
+     * Simulates Player stopping by returning the Player to its standard standing sprite
+     */
     public void haltPlayer()
     {
         currentlyMoving = false;

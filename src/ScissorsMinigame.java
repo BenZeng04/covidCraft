@@ -1,16 +1,44 @@
 import java.awt.*;
 import java.awt.event.MouseEvent;
-import java.math.BigDecimal;
 
+/**
+ * @author Ben Zeng
+ * Revision History:
+ * - June 16, 2020: Updated ~Ben Zeng. Time Spent: 30 min
+ * - June 12, 2020: Created ~Ben Zeng. Time Spent: 1h 30m
+ * The class representing the minigame that shows up upon crafting the face mask.
+ * @version 1
+ */
 public class ScissorsMinigame extends ScreenPanel
 {
+    /**
+     * The ball object / component that needs to be dragged
+     */
     private Ball ball;
+    /**
+     * Current frame
+     */
     private int currentFrame;
-    private int score;
+    /**
+     * Images that will be used as display
+     */
     private Image background, shirt;
+    /**
+     * Constant for ball radius
+     */
     private final static int BALL_RADIUS = 30;
+    /**
+     * Storage unit that item will be created in
+     */
+    private StorageUnit storageUnit;
+    /**
+     * Base item
+     */
     private Item item;
 
+    /**
+     * Helper class / component
+     */
     private class Ball extends ScreenComponent
     {
         private int x, y;
@@ -49,11 +77,20 @@ public class ScissorsMinigame extends ScreenPanel
                 started = true;
         }
 
+        /**
+         * Helper methodto find distance from ball to mouse
+         * @param mouseX mouse x
+         * @param mouseY mouse y
+         * @return the distance
+         */
         private double dist(int mouseX, int mouseY)
         {
             return Math.sqrt(Math.pow(mouseX - x, 2) + Math.pow(mouseY - y, 2));
         }
 
+        /**
+         * Helper method that updates variables
+         */
         private void update()
         {
             // Checkpoints
@@ -93,10 +130,13 @@ public class ScissorsMinigame extends ScreenPanel
                 followError += (int) Math.pow(Math.max(0, (dist(getMouseX(), getMouseY()) - BALL_RADIUS) / 60), 3);
         }
 
+        /**
+         * Event that happens when the game gets completed
+         */
         private void gameFinished()
         {
-            score = (int) (100000 / (followError + 1000));
-            item.setQuality(score);
+            int score = (int) (100000 / (followError + 1000));
+            storageUnit.addItem(item.changeQuality(score));
             addComponent(new DialogueGUI("Congratulations! You have completed your first ever mini-game with a score of " + score + "%! Press the \"Return\" button to return back to playing.")
             {
                 @Override
@@ -110,10 +150,10 @@ public class ScissorsMinigame extends ScreenPanel
             });
         }
     }
-
-    public ScissorsMinigame(Item item)
+    public ScissorsMinigame(Item baseItem, StorageUnit toAdd)
     {
-        this.item = item;
+        item = baseItem;
+        storageUnit = toAdd;
         background = Item.loadImage("Backgrounds/MinigameBackground1.png");
         shirt = Item.TSHIRT.ICON;
         addComponent(new DialogueGUI("Welcome to your first ever mini-game! Here, you will be tracing a rectangle at a set speed, following a glowing circle! Once you click the glowing circle, you MUST hold on to it for the entire duration! You will be graded on how accurately you can follow the circle, so good luck!")
@@ -126,6 +166,7 @@ public class ScissorsMinigame extends ScreenPanel
             }
         });
     }
+    @Override
     public void draw(Graphics g)
     {
         currentFrame++;
@@ -136,6 +177,11 @@ public class ScissorsMinigame extends ScreenPanel
         g.drawRect(320, 260, 460, 180);
         g.setColor(new Color(59, 110, 255, getSineWave()));
     }
+
+    /**
+     * Helper method that utilizes a sine wave to produce a ripple effect
+     * @return
+     */
     private int getSineWave()
     {
         return (int) (127 * Math.sin(currentFrame * Math.PI / 30)) + 127; // Using a sine wave for the highlight.

@@ -2,21 +2,51 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+
+/**
+ * @author Ben Zeng
+ * Revision History:
+ * - Jun 1, 2020: Created ~Ben Zeng. Time Spent: 30m
+ * The class used as a transition between two screens
+ * @version 1
+ */
 public class TransitionEvent extends ScreenComponent
 {
+    /**
+     * The transition time for the event
+     */
     private final int TRANSITION_TIME;
+    /**
+     * Number of frames currently elapsed
+     */
     private int framesElapsed;
+    /**
+     * Path representing which screen will be transitioned to
+     */
     private String[] screenPath;
+
+    /**
+     * Default constructor
+     * @param screenPath Path representing which screen will be transitioned to
+     */
     public TransitionEvent(String... screenPath)
     {
         this(30, screenPath);
     }
+
+    /**
+     * More advanced constructor
+     * @param transition Transition time
+     * @param screenPath Path representing which screen will be transitioned to
+     */
     public TransitionEvent(int transition, String... screenPath)
     {
         super(Integer.MAX_VALUE); // Must be maximum possible layer!
         TRANSITION_TIME = transition;
         this.screenPath = screenPath;
     }
+
+    @Override
     public void draw(Graphics g)
     {
         framesElapsed++;
@@ -34,22 +64,32 @@ public class TransitionEvent extends ScreenComponent
             // This component will now be flagged for deletion, however the new FadeOut instance will play a fade out animation for the new screen
         }
     }
+
+    @Override
     public void mousePressed(MouseEvent me)
     {
         // Prevents other components from receiving any mouse events
         denyComponents();
     }
+
+    @Override
     public void keyPressed(KeyEvent ke)
     {
         // Prevents other components from receiving any key events
         denyComponents();
     }
+
+    /**
+     * Private helper class for the fade out transition
+     */
     private class FadeOut extends ScreenComponent
     {
         public FadeOut()
         {
             super(Integer.MAX_VALUE);
         }
+
+        @Override
         public void draw(Graphics g)
         {
             framesElapsed--;
@@ -58,10 +98,14 @@ public class TransitionEvent extends ScreenComponent
             if(framesElapsed == 0)
                 removeComponent(this);
         }
+
+        @Override
         public void mousePressed(MouseEvent me)
         {
             denyComponents();
         }
+
+        @Override
         public void keyPressed(KeyEvent ke)
         {
             denyComponents();

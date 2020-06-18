@@ -8,8 +8,9 @@
  */
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.IOException;
 
@@ -19,14 +20,16 @@ import java.io.IOException;
  * - May 29, 2020: Created ~Oscar Han.
  * @version 1
  */
-
 public class ExitMenu extends ScreenPanel
 {
     // https://stackoverflow.com/questions/1234912/how-to-programmatically-close-a-jframe
     private Image bg;
+    private int framesElapsed;
 
-    public ExitMenu()
-    {
+    /**
+     * Constructor: loads background image
+     */
+    public ExitMenu() {
         try {
             bg= ImageIO.read(new File("Backgrounds/Exit_Bg.png"));
         }
@@ -37,14 +40,9 @@ public class ExitMenu extends ScreenPanel
     @Override
     public void draw(Graphics g)
     {
-        g.drawImage(bg,0,0,null);
+        g.drawImage(bg,0,0, 1080, 720, null);
+        framesElapsed++;
+        if(framesElapsed == 60 * 5)
+            System.exit(0);
     }
-
-    /*
-    @Override
-    public void mousePressed(MouseEvent e) {
-        getParent().displayPanel("MenuScreen");
-        denyComponents();
-    }
-     */
 }

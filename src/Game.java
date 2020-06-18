@@ -4,15 +4,9 @@
  * Ms. Krasteva
  * Implementation of the first few basic screens in the program.
  */
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.*;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+
+import java.io.*;
 import java.util.*;
-import java.util.Map.Entry;
 
 /**
  * @author Ben Zeng, Oscar Han, Nathan Lu
@@ -25,13 +19,27 @@ import java.util.Map.Entry;
 
 public class Game extends MultiPanel
 {
-    private BufferedReader br;
+    /**
+     * Constant for game size
+     */
     public static final int GAME_WIDTH = 1080, GAME_HEIGHT = 720;
+    /**
+     * Inventory of the player throughout the game
+     */
     private Item[] inventory;
-    private Level[] levels = new Level[]{new Level(0),new Level(1),new Level(2)};
+    /**
+     * Level constant list with information on recipes
+     */
+    private Level[] levels = new Level[] {new Level(0), new Level(1), new Level(2)};
+    /**
+     * Current level
+     */
     private int currentLevel;
+    /**
+     * Booleans for whether or not specific interactables have been used yet. Used to create tutorials.
+     */
     private boolean inventoryUsed, storageDeviceUsed, computerUsed, anvilUsed, doorUsed;
-    private ArrayList<GameplayRoom> rooms = new ArrayList<GameplayRoom>();
+
     public Game(boolean loadSavedGame)
     {
         boolean createTutorial;
@@ -41,8 +49,8 @@ public class Game extends MultiPanel
             inventoryUsed = storageDeviceUsed = computerUsed = anvilUsed = doorUsed = true; // Assume the player has already used these.
             createTutorial = false;
         }
-        else createTutorial = true;
-        currentLevel= 0; // I tinkered with this a little bit; TODO
+        else
+            createTutorial = true;
         inventory = new Item[4];
         add(new LivingRoom(), "Living Room");
         add(new DiningRoom(), "Dining Room");
@@ -55,161 +63,202 @@ public class Game extends MultiPanel
         add(new SecondBathroom(), "Bathroom 2");
         displayPanel("Alice's Room");
         if(loadSavedGame)
-        {
-            loadGame(this);
-        }
+            loadGame();
         else
         {
+            // Adding items to storage devices manually rather than checking through file
             for(int entry: Item.IDtoItem.keySet())
             {
                 Item item = Item.IDtoItem.get(entry);
-                item.setQuality(-1);
+                if (!item.NAME.equals(Item.UTILITYKNIFE) && !item.NAME.equals(Item.SCISSORS))
                 item.addToStorageDevices();
             }
         }
-    }
-    public void loadGame(Game g) {
-        try {
-            br = new BufferedReader(new FileReader("saveFile.txt"));
+        try
+        {
+            new PrintWriter(new FileWriter("saveFile.txt")); // Resets the saved file to a blank file.
         }
-        catch(Exception e){}
+        catch(IOException e) {}
+    }
 
-        //getting player inventory
-        String playerInventory = "";
-        try {
-            playerInventory = br.readLine();
-        }
-        catch (Exception e) {}
-
-        //setting player inventory
-        String [] individualIDs = playerInventory.split(" ");
-        Item [] inventory = g.getInventory();
-        for (int x=0; x<individualIDs.length; x++) {
-            String curID = individualIDs[x];
-            int integerVersionOfID = Integer.parseInt(curID);
-            inventory[x] = Item.IDtoItem.get(integerVersionOfID);
-        }
-        //getting locations of items
-        HashMap<String, JPanel> IDToRoom = g.IDtoJPanel();
-        String cur = null;
-        try {
-            cur = br.readLine();
-        }
-        catch (Exception e) {}
-        while (cur!=null) {
-            GameplayRoom curRoom = (GameplayRoom) IDToRoom.get(cur);
-            try {
-                cur = br.readLine();
-            }
-            catch (Exception e) {}
-            while (!cur.equals("exit")) {
-                StorageUnit curStorage = findStorageUnit(curRoom, Integer.parseInt(cur));
-                int index = 0;
-                while (!cur.equals("exit")) {
-                    Item [] curStorageArray = curStorage.getStorage();
-                    int integerItemID = Integer.parseInt(cur);;
-                    curStorageArray[index] = Item.IDtoItem.get(integerItemID);
-                    try {
-                        cur = br.readLine();
-                    }
-                    catch (Exception e) {}
-                }
-                try {
-                    cur = br.readLine();
-                }
-                catch (Exception e) {}
-            }
-            try {
-                cur = br.readLine();
-            }
-            catch (Exception e) {}
-        }
-    }
-    private StorageUnit findStorageUnit(GameplayRoom gpr, int desiredID) {
-        ArrayList<HitBox> furniture = gpr.getHitBoxes();
-        for (HitBox hb : furniture) {
-            if (hb instanceof StorageUnit) { //if the HitBox is a StorageUnit
-                if (((StorageUnit) hb).getID()==desiredID) {
-                    return (StorageUnit) hb;
-                }
-            }
-        }
-        return null;
-    }
-    public void add(GameplayRoom panel, String panelID)
+    /**
+     * Helper method to load the game from a file.
+     */
+    private void loadGame()
     {
-        super.add(panel, panelID);
-        rooms.add(panel);
+        try
+        {
+            BufferedReader br = new BufferedReader(new FileReader("saveFile.txt"));
+            for(int i = 0; i < inventory.length; i++) // Inventory items
+            {
+                String entry = br.readLine();
+                if(!entry.equals("NULL"))
+                {
+                    String[] tokens = entry.split(" ");
+                    int ID = Integer.parseInt(tokens[0]);
+                    int quality = Integer.parseInt(tokens[1]);
+                    inventory[i] = Item.IDtoItem.get(ID);
+                    inventory[i] = inventory[i].changeQuality(quality);
+                }
+            }
+            // Storage component items
+            int storageComponentCount = Integer.parseInt(br.readLine());
+            for(int x = 0; x < storageComponentCount; x++)
+            {
+                String component = br.readLine();
+                String[] token = component.split(" ");
+                int storageID = Integer.parseInt(token[0]);
+                Item[] storage = StorageUnit.IDToStorageUnit.get(storageID).getStorage();
+                for(int i = 0; i < storage.length; i++)
+                {
+                    String entry = br.readLine();
+                    if(!entry.equals("NULL"))
+                    {
+                        String[] tokens = entry.split(" ");
+                        int ID = Integer.parseInt(tokens[0]);
+                        int quality = Integer.parseInt(tokens[1]);
+                        storage[i] = Item.IDtoItem.get(ID);
+                        storage[i] = storage[i].changeQuality(quality);
+                    }
+                }
+            }
+            currentLevel = Integer.parseInt(br.readLine());
+        }
+        catch(Exception e)
+        {
+        }
     }
+
+    /**
+     * Getter for level objects via the level number
+     * @param level the current level number
+     * @return the level object
+     */
     public Level getLevel(int level)
     {
         return levels[level];
     }
-    public ArrayList<GameplayRoom> getRooms() {
-        return rooms;
-    }
+
+    /**
+     * Getter for inventory
+     * @return the player inventory
+     */
     public Item[] getInventory()
     {
         return inventory;
     }
 
+    /**
+     * Setter for inventory
+     * @param inventory the player inventory
+     */
     public void setInventory(Item[] inventory)
     {
         this.inventory = inventory;
     }
 
-    public int getCurrentLevel(){
+    /**
+     * Getter for the current level number
+     * @return the current level number
+     */
+    public int getCurrentLevel()
+    {
         return currentLevel;
     }
-    public void incrementLevel(){
+
+    /**
+     * Increments the level by 1.
+     */
+    public void incrementLevel()
+    {
         currentLevel++;
     }
 
+    /**
+     * Checks whether or not inventory has been used yet (And a dialogue needs to show)
+     * @return whether or not inventory has been used yet
+     */
     public boolean isInventoryUsed()
     {
         return inventoryUsed;
     }
 
+    /**
+     * Setter for inventoryUsed
+     * @param inventoryUsed whether inventory has been used yet
+     */
     public void setInventoryUsed(boolean inventoryUsed)
     {
         this.inventoryUsed = inventoryUsed;
     }
 
+    /**
+     * Checks whether or not a storage device has been used yet (And a dialogue needs to show)
+     * @return whether or not a storage device has been used yet
+     */
     public boolean isStorageDeviceUsed()
     {
         return storageDeviceUsed;
     }
 
+    /**
+     * Setter for storageDeviceUsed
+     * @param storageDeviceUsed whether or not storage device has been used yet
+     */
     public void setStorageDeviceUsed(boolean storageDeviceUsed)
     {
         this.storageDeviceUsed = storageDeviceUsed;
     }
 
+    /**
+     * Checks whether or not computer has been used yet (And a dialogue needs to show)
+     * @return whether or not computer has been used yet
+     */
     public boolean isComputerUsed()
     {
         return computerUsed;
     }
 
+    /**
+     * Setter for computerUsed
+     * @param computerUsed whether or not computer has been used yet
+     */
     public void setComputerUsed(boolean computerUsed)
     {
         this.computerUsed = computerUsed;
     }
 
+    /**
+     * Checks whether or not anvil has been used yet (And a dialogue needs to show)
+     * @return whether or not anvil has been used yet
+     */
     public boolean isAnvilUsed()
     {
         return anvilUsed;
     }
 
+    /**
+     * Setter for anvilUsed
+     * @param anvilUsed Whether or not anvil has been used yet
+     */
     public void setAnvilUsed(boolean anvilUsed)
     {
         this.anvilUsed = anvilUsed;
     }
 
+    /**
+     * Checks whether or not door has been used yet (And a dialogue needs to show)
+     * @return whether or not door has been used yet
+     */
     public boolean isDoorUsed()
     {
         return doorUsed;
     }
 
+    /**
+     * Setter for doorUsed
+     * @param doorUsed whether or not door has been used yet
+     */
     public void setDoorUsed(boolean doorUsed)
     {
         this.doorUsed = doorUsed;

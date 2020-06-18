@@ -1,3 +1,11 @@
+
+/**
+ * @author Ben Zeng
+ * Revision History:
+ * Jun 16, 2020: Created ~Ben Zeng, 15m
+ * A class representing the yellow door which the player walks out of to go to the next level.
+ * @version 1
+ */
 public class SpecialDoor extends Interactable
 {
     public SpecialDoor(int layer, int xStart, int yStart, int xEnd, int yEnd)
@@ -11,7 +19,7 @@ public class SpecialDoor extends Interactable
         Game game = getGame();
         if(game.getCurrentLevel() < 2)
         {
-            DialogueGUI levelComplete = new DialogueGUI("CONGRATULATIONS! You have completed level " + game.getCurrentLevel() + "! You will promptly be returned to your room.")
+            DialogueGUI levelComplete = new DialogueGUI("CONGRATULATIONS! You have completed level " + game.getCurrentLevel() + "! It is time to move on to the next level! You will promptly be returned to your room.")
             {
                 @Override
                 public void whenExited()
@@ -29,7 +37,6 @@ public class SpecialDoor extends Interactable
                 @Override
                 public void whenExited()
                 {
-                    // TODO PUT VICTORY SCREEN HERE RERERERERE
                     addComponent(new TransitionEvent("MainMenu"));
                 }
             };

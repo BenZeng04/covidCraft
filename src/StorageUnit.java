@@ -4,17 +4,42 @@ import java.util.HashMap;
 /**
  * @author Nathan Lu
  * Revision History:
+ * - Jun 8, 2020: Added Inventory GUI Ben Zeng. Time Spent: 10m
  * - Jun 5, 2020: Created ~Nathan Lu. Time Spent: 10m
  * The class representing the storage components
  * @version 1
  */
 public class StorageUnit extends Interactable
 {
+    /**
+     * The Hash Map that converts IDs to StorageUnits
+     */
     public static HashMap<Integer, StorageUnit> IDToStorageUnit = new HashMap<>();
+    /**
+     * The variables that determine the length and width of the inventory of this StorageUnit
+     */
     private final int INVENTORY_HEIGHT, INVENTORY_WIDTH;
+    /**
+     * The variable denoting the size of the array
+     */
     private final int INVENTORY_SIZE;
+    /**
+     * The array of items in the inventory
+     */
     private Item[] storage;
+    /**
+     * The ID of the StorageUnit, used to save and load games
+     */
     private int id;
+
+    /**
+     * Default constructor, creates a hitbox from (xStart, yStart) to (xEnd, yEnd)
+     * @param layer The layer
+     * @param xStart The x-start for the hitbox
+     * @param yStart The y-start for the hitbox
+     * @param xEnd The x-end for the hitbox
+     * @param yEnd The y-end for the hitbox
+     */
     public StorageUnit(int layer, int xStart, int yStart, int xEnd, int yEnd, int height, int width, int id)
     {
         super(layer, xStart, yStart, xEnd, yEnd);
@@ -25,6 +50,8 @@ public class StorageUnit extends Interactable
         this.id = id;
         IDToStorageUnit.put(id, this);
     }
+
+    @Override
     public void whenInteractedWith()
     {
         if(!getGame().isStorageDeviceUsed())
@@ -40,19 +67,32 @@ public class StorageUnit extends Interactable
                 }
             });
         }
-        else createGUI();
+        else
+            createGUI();
     }
+
+    /**
+     * Creates the GUI menu that allows the player to access the contents of the StorageUnit
+     */
     public void createGUI()
     {
         addComponent(new StorageUnitInventory(storage, getPlayerInventory()));
     }
+
+    //Accessors
     public Item[] getStorage()
     {
         return storage;
     }
-    public int getID() {
+
+    public int getID()
+    {
         return id;
     }
+
+    /**
+     * Checks if there's still an empty space in the array
+     */
     public boolean hasSpaceLeft()
     {
         for(Item item: storage)
@@ -60,6 +100,12 @@ public class StorageUnit extends Interactable
                 return true;
         return false;
     }
+
+    /**
+     * Adds the item toAdd to this storage component
+     * @param toAdd the item to add
+     * @return successful or not
+     */
     public boolean addItem(Item toAdd)
     {
         ArrayList<Integer> availibleSlots = new ArrayList<>();
@@ -68,23 +114,38 @@ public class StorageUnit extends Interactable
             if(storage[i] == null)
                 availibleSlots.add(i);
         }
-        if(availibleSlots.isEmpty()) return false;
+        if(availibleSlots.isEmpty())
+            return false;
         int randomIndex = (int) (Math.random() * availibleSlots.size());
         storage[availibleSlots.get(randomIndex)] = toAdd;
         return true;
     }
+
+    /**
+     * Helper class used for the GUI
+     */
     private class StorageUnitInventory extends InventoryGUI
     {
         private Item[] storageUnitInventory, playerInventory;
+
         public StorageUnitInventory(Item[] storageUnitInventory, Item[] playerInventory)
         {
             this.storageUnitInventory = storageUnitInventory; // It is important that the reference gets saved!
             this.playerInventory = playerInventory;
         }
+
+        /**
+         * Helper method to find the start location when displaying item slots
+         * @param middleLocation the middle location
+         * @param spacing spacing distance of items
+         * @param count item count
+         * @return the position
+         */
         private int findStart(int middleLocation, int spacing, int count)
         {
             return middleLocation - (spacing * (count - 1) / 2);
         }
+
         @Override
         public Position[] getItemLocations()
         {

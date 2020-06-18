@@ -1,7 +1,18 @@
 import java.awt.*;
 
+/**
+ * @author Ben Zeng
+ * Revision History:
+ * - June 11, 2020: Created ~Ben Zeng. Time Spent: 1h
+ * The class representing a dialogue pop-up on the screen, specifically for the tutorial.
+ * @version 1
+ */
 public class TutorialDialogue extends DialogueGUI
 {
+    /**
+     * Static helper method to start and create tutorial dialogues
+     * @param room the room
+     */
     public static void startTutorial(GameplayRoom room)
     {
         TutorialDialogue dialogueList[] =
@@ -29,15 +40,38 @@ public class TutorialDialogue extends DialogueGUI
             dialogueList[i - 1].setNextDialogue(dialogueList[i]);
         room.addComponent(dialogueList[0]);
     }
+
+    /**
+     * The next dialogue that gets played after clicking this
+     */
     private TutorialDialogue nextDialogue;
+    /**
+     * What item should be highlighted
+     */
     private Position highlight;
+    /**
+     * Current frame upon starting
+     */
     private int currentFrame;
+    /**
+     * Constant for highlight size
+     */
     private final static int HIGHLIGHT_SIZE = 120;
 
+    /**
+     * Default constructor
+     * @param textLines The text
+     */
     public TutorialDialogue(String textLines)
     {
         super(textLines);
     }
+
+    /**
+     * More advanced constructor
+     * @param displayAtTop Whether or not displayed at the top
+     * @param textLines The text
+     */
     public TutorialDialogue(boolean displayAtTop, String textLines)
     {
         super(displayAtTop, textLines);
@@ -62,21 +96,37 @@ public class TutorialDialogue extends DialogueGUI
             addComponent(getNextDialogue());
     }
 
+    /**
+     * Returns the next dialogue
+     * @return the next dialogue
+     */
     public TutorialDialogue getNextDialogue()
     {
         return nextDialogue;
     }
 
+    /**
+     * Setter for next dialogue
+     * @param nextDialogue the next dialogue
+     */
     public void setNextDialogue(TutorialDialogue nextDialogue)
     {
         this.nextDialogue = nextDialogue;
     }
 
+    /**
+     * Getter for highlight position
+     * @return the position
+     */
     public Position getHighlight()
     {
         return highlight;
     }
 
+    /**
+     * Setter for highlight position
+     * @param highlight the position
+     */
     public void setHighlight(Position highlight)
     {
         this.highlight = highlight;

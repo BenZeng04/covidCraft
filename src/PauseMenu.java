@@ -1,32 +1,36 @@
-import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
-import java.util.StringTokenizer;
 
-
+/**
+ * @author Nathan Lu
+ * Revision History:
+ * - June 16, 2020: Created ~Nathan Lu. Time Spent: 30m
+ * @version 1
+ */
 public class PauseMenu extends ScreenComponent
 {
-    private Button[] fromMenu= new Button[2];
+    /**
+     * Buttons inside of the menu
+     */
+    private Button[] fromMenu = new Button[2];
+    /**
+     * Whether or not buttons have been added / initialized yet
+     */
     private boolean initialized;
-    private PrintWriter out;
-    private Scanner s = new Scanner(System.in);
-    private StringTokenizer st;
-    private BufferedReader br;
+
+    /**
+     * Default constructor
+     */
     public PauseMenu()
     {
         super(100);
-        fromMenu[0] = new ScreenChangeButton("MainMenu",340,250,400,60,5, 101)
+        fromMenu[0] = new ScreenChangeButton("MainMenu", 340, 250, 400, 60, 5, 101)
         {
             @Override
             public void buttonPressed(MouseEvent event)
             {
-                getHostPanel().add(new MainMenu(), "MainMenu");
                 super.buttonPressed(event);
                 removeComponent(fromMenu[0]);
                 removeComponent(fromMenu[1]);
@@ -34,7 +38,7 @@ public class PauseMenu extends ScreenComponent
                 saveGame((Game) getParentScreen().getParent());
             }
         };
-        fromMenu[1]= new ScreenChangeButton("Gameplay",340,410,400,60,5, 101)
+        fromMenu[1] = new ScreenChangeButton("Gameplay", 340, 410, 400, 60, 5, 101)
         {
             @Override
             public void buttonPressed(MouseEvent event)
@@ -44,42 +48,50 @@ public class PauseMenu extends ScreenComponent
                 removeComponent(PauseMenu.this);
             }
         };
-        fromMenu[0].setText("Save and Exit",420,290,30,Color.white);
-        fromMenu[1].setText("Resume",485,450,30,Color.white);
+        fromMenu[0].setText("Save and Exit", 420, 290, 30, Color.white);
+        fromMenu[1].setText("Resume", 485, 450, 30, Color.white);
     }
-    public void saveGame(Game g) {
-        try {
-            out = new PrintWriter (new FileWriter("saveFile.txt"));
+
+    /**
+     * Saves the game g into a file.
+     * @param g The game that needs to be saved
+     */
+    public void saveGame(Game g)
+    {
+        PrintWriter out = null;
+        try
+        {
+            out = new PrintWriter(new FileWriter("saveFile.txt"));
         }
-        catch(Exception e){};
+        catch(Exception e)
+        {
+        }
 
         //printing player inventory
-        for (Item x : g.getInventory()) {
+        for(Item x: g.getInventory())
+        {
             if(x != null)
-                out.print(x.ID+" ");
+                out.println(x.ID + " " + x.QUALITY);
+            else
+                out.println("NULL");
         }
-        out.println();
-        //saving locations of items
-        ArrayList<GameplayRoom> rooms = g.getRooms();
-        HashMap<JPanel, String> roomIDs = g.JPaneltoID();
-        for(GameplayRoom r : rooms) { //loop through all the rooms
-            String curRoomID = roomIDs.get(r);
-            out.println(curRoomID);
-            for (HitBox hb : r.getHitBoxes()) { //in each room, loop through each HitBox
-                if (hb instanceof StorageUnit) { //if the HitBox is a StorageUnit
-                    int storageID = ((StorageUnit) hb).getID();
-                    out.println(storageID);
-                    for (Item i : ((StorageUnit) hb).getStorage()) { //record the location and ID of each Item in this StorageUnit
-                        if(i != null)
-                            out.println(i.ID);
-                    }
-                    out.println("exit");
-                }
-            }
-            out.println("exit");
+        out.println(StorageUnit.IDToStorageUnit.keySet().size());
+        for(int ID: StorageUnit.IDToStorageUnit.keySet())
+        {
+            StorageUnit entry = StorageUnit.IDToStorageUnit.get(ID);
+            out.println(ID);
+            for(Item x: entry.getStorage())
+                if(x != null)
+                    out.println(x.ID + " " + x.QUALITY);
+                else
+                    out.println("NULL");
         }
+        out.println(g.getCurrentLevel());
         out.close();
+        // Resetting the main menu buttons
+        getHostPanel().add(new MainMenu(), "MainMenu");
     }
+
     @Override
     public void draw(Graphics g)
     {

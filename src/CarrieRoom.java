@@ -2,7 +2,15 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-
+/**
+ * @author Ben Zeng, Oscar Han, Nathan Lu
+ * Revision History:
+ * Jun 16 2020: Added static final IDs ~Ben Zeng, 2 mins
+ * Jun 11 2020: Added IDs to all storage components for the save systemNathan Lu, 5 mins
+ * Jun 9 2020: Created ~Nathan Lu, 20 mins
+ * Class representing a single room within the levels. A "room" is a section of the house, such as the living room or bedroom, and contains a variety of interactable components.
+ * @version 1
+ */
 public class CarrieRoom extends GameplayRoom
 {
     public static final int CARRIE = 16;
@@ -19,7 +27,7 @@ public class CarrieRoom extends GameplayRoom
         addHitBox(new HitBox(0, 420, 220, 530, 390)); //chair
         addHitBox(new HitBox(0, 20, 140, 340, 370)); //furniture at left
         addHitBox(new HitBox(0, 930, 440, 1050, 650)); //telescope
-        addHitBox(new Roommate(0, 600, 140, 750, 360, CARRIE, Item.loadImage("Sprites_Humans/Carrie.png"), Item.UTILITYKNIFE));
+        addHitBox(new Roommate(0, 600, 140, 750, 360, CARRIE, Item.loadImage("Sprites_Humans/Carrie.png"), Item.UTILITYKNIFE)); //Roommate
         addHitBox(new Door(0, 0, 445, 30, 610, "Hallway")); //Door at the left
     }
 

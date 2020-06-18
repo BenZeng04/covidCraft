@@ -3,11 +3,26 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
-// Oscar
+/**
+ * @author Oscar Han
+ * Revision History:
+ * - June 8, 2020: Created ~Oscar Han. Time Spent: 5m
+ * The splash screen that plays at the beginning.
+ * @version 1
+ */
 public class SplashScreen extends ScreenPanel {
+    /**
+     * The logo
+     */
     private Image logo;
+    /**
+     * Timer for fade
+     */
     private int fade;
 
+    /**
+     * Default Constructor
+     */
     public SplashScreen() {
         try {
             logo= ImageIO.read(new File("Backgrounds/Company_Logo.png"));
@@ -16,6 +31,7 @@ public class SplashScreen extends ScreenPanel {
         }
     }
 
+    @Override
     public void draw(Graphics g)
     {
         if(fade == 255)

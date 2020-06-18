@@ -16,43 +16,30 @@ import java.util.*;
  */
 public class Recipe
 {
+    /**
+     * Ingredients needed to craft
+     */
     private ArrayList<Integer> ingredientIDs;
+    /**
+     * ID of the item crafted
+     */
     private int id;
-    private String name;
-    private static HashMap<Integer, String> dictionary = new HashMap<>();
-    static
-    {
-        dictionary.put(1, "T Shirt");
-        dictionary.put(2, "Scissors");
-        dictionary.put(3, "Hole Puncher");
-        dictionary.put(4, "Utility Knife");
-        dictionary.put(5, "Tape");
-        dictionary.put(6, "Tape Measure");
-        dictionary.put(7, "Thread");
-        dictionary.put(8, "Elastic");
-        dictionary.put(9, "Bucket");
-        dictionary.put(10, "Plastic Bottle");
-        dictionary.put(11, "Plastic Sheet");
-        dictionary.put(12, "Plastic Guard");
-        dictionary.put(13, "Visor Handle");
-        dictionary.put(14, "Shield Cover");
-        dictionary.put(15, "Face Shield");
-        dictionary.put(16, "Face Mask");
-        dictionary.put(17, "Rubbing Alcohol");
-        dictionary.put(18, "Aloe Vera Gel");
-        dictionary.put(19, "Essential Oil");
-        dictionary.put(20, "Sanitizer Gel");
-        dictionary.put(21, "Hand Sanitizer");
-    }
 
-    public Recipe(String name, int id, ArrayList<Integer> ingredients)
+    /**
+     * Constructor of Recipe class
+     * @param id ID of craftable for a recipe.
+     * @param ingredients ArrayList of IDs required to make craftable.
+     */
+    public Recipe(int id, ArrayList<Integer> ingredients)
     {
-        this.name = name;
         this.id = id;
         this.ingredientIDs = ingredients;
     }
-
-    public boolean canCraft(ArrayList<Integer> items) // if item is craftable TODO
+    /**
+     * items is compared with ingredientIDs to determine whether the craftable is craftable with the items in possession.
+     * @param items ArrayList of IDs of items in user inventory.
+     */
+    public boolean canCraft(ArrayList<Integer> items)
     {
         for(int x = 0; x < items.size(); x++)
             if(!ingredientIDs.contains(items.get(x)))
@@ -63,46 +50,20 @@ public class Recipe
         return true;
     }
 
-    public boolean itemsNeeded(ArrayList<Integer> items) // what items are needed
-    {
-        ArrayList<Integer> copyOfIngredientIDs = new ArrayList<Integer>();
-        for(int x: ingredientIDs)
-        {
-            copyOfIngredientIDs.add(x);
-        }
-        for(int x = 0; x < items.size(); x++)
-        {
-            if(copyOfIngredientIDs.contains(items.get(x)))
-            {
-                copyOfIngredientIDs.remove(copyOfIngredientIDs.get(items.get(x)));
-            }
-        }
-        if(copyOfIngredientIDs.size() == 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    public String getName()
-    {
-        return name;
-    }
-
+    /**
+     * Getter method for the ID of the recipe
+     * @return id
+     */
     public int getID()
     {
         return id;
-    }
-
+    } // getter method- returns ID of recipe
+    /**
+     * Getter method for the ingredient list IDs of the recipe
+     * @return ArrayList of ingredients
+     */
     public ArrayList<Integer> getIngredientIDs()
     {
         return ingredientIDs;
-    }
-
-    public HashMap<Integer, String> getDictionary(){
-        return dictionary;
-    }
+    } // getter method- returns IDs required to make recipe
 }

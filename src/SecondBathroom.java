@@ -3,6 +3,15 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * @author Ben Zeng, Oscar Han, Nathan Lu
+ * Revision History:
+ * Jun 16 2020: Added static final IDs ~Ben Zeng, 2 mins
+ * Jun 11 2020: Added IDs to all storage components for the save systemNathan Lu, 5 mins
+ * Jun 9 2020: Created ~Nathan Lu, 20 mins
+ * Class representing a single room within the levels. A "room" is a section of the house, such as the living room or bedroom, and contains a variety of interactable components.
+ * @version 1
+ */
 public class SecondBathroom extends GameplayRoom
 {
     public static int CABINET = 3;

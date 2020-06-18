@@ -21,26 +21,50 @@ public class HitBox extends ScreenComponent
     private int xEnd;
     private int yEnd;
 
+    /**
+     * Getter for x start
+     * @return x start
+     */
     public int getXStart()
     {
         return xStart;
     }
 
+    /**
+     * Getter for y start
+     * @return y start
+     */
     public int getYStart()
     {
         return yStart;
     }
 
+    /**
+     * Getter for x end
+     * @return x end
+     */
     public int getXEnd()
     {
         return xEnd;
     }
 
+    /**
+     * Getter for y end
+     * @return y end
+     */
     public int getYEnd()
     {
         return yEnd;
     }
 
+    /**
+     * Default constructor, creates a hitbox from (xStart, yStart) to (xEnd, yEnd)
+     * @param layer The layer
+     * @param xStart The x-start for the hitbox
+     * @param yStart The y-start for the hitbox
+     * @param xEnd The x-end for the hitbox
+     * @param yEnd The y-end for the hitbox
+     */
     public HitBox(int layer, int xStart, int yStart, int xEnd, int yEnd)
     {
         super(layer);

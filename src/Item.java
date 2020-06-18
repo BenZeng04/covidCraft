@@ -15,8 +15,9 @@ import java.util.*;
  * @author Nathan Lu
  * Revision History:
  * - May 29, 2020: Created ~Nathan Lu. Time Spent: 5m
- * - Oscar: added values for HashMap
- * The class representing items.
+ * - Updated: ~Oscar- added values for HashMap Time SPend: 15m
+ * - June 17, 2020: Updated ~Ben Zeng, Oscar Han, Nathan Lu. Time Spent: 30m
+ * The immutable class representing items.
  * CREDIT TO ITEM SOURCES:
  * - https://pbs.twimg.com/media/D7mSLOMUIAAGYfa.png (Scissors)
  *
@@ -24,7 +25,13 @@ import java.util.*;
  */
 public class Item
 {
+    /**
+     * Static map to map IDs to specific items
+     */
     public static HashMap<Integer, Item> IDtoItem = new HashMap<Integer, Item>();
+    /**
+     * Constants for all items in the game
+     */
     public final static Item TSHIRT, SCISSORS, HOLEPUNCHER, UTILITYKNIFE, TAPE, TAPEMEASURE, THREAD, ELASTIC, BUCKET, PLASTICBOTTLE, PLASTICSHEET, PLASTICGUARD, VISORHANDLE, SHIELDCOVER, FACESHIELD, FACEMASK, RUBBINGALCOHOL, ALOEVERA,  ESSENTIALOIL, SANITIZERGEL, HANDSANITIZER;
     static
     {
@@ -37,10 +44,7 @@ public class Item
 
         SCISSORS = new Item("Scissors", 2, "Snip Snip... Used to cut things of all sorts.", true, loadImage("Items/Scissors.png"));
         IDtoItem.put(2, SCISSORS);
-        SCISSORS.addLocations(
-            AliceRoom.DRAWERS,
-            LivingRoom.DESK
-        );
+        // Given by NPC
 
         HOLEPUNCHER = new Item("Hole Puncher", 3, "Usually the 3-holed version is better, but they can be inconvenient when you need custom lengths.", true, loadImage("Items/HolePuncher.png"));
         IDtoItem.put(3, HOLEPUNCHER);
@@ -60,7 +64,8 @@ public class Item
             AliceRoom.DRAWERS,
             LivingRoom.DESK,
             LivingRoom.DRESSER,
-            Kitchen.BOTTOM_CABINET
+            Kitchen.BOTTOM_CABINET,
+            DiningRoom.DRAWER
         );
 
         TAPEMEASURE = new Item("Tape Measure", 6, "As the name implies, it is used to measure lengths. Useful for making precise cuts.", true, loadImage("Items/TapeMeasure.png"));
@@ -70,18 +75,20 @@ public class Item
             Kitchen.BOTTOM_CABINET
         );
 
-        THREAD = new Item("Thread", 7, "Just some common string.", loadImage("Items/Thread.png"));
+        THREAD = new Item("Thread", 7, "Just some common string.", true, loadImage("Items/Thread.png"));
         IDtoItem.put(7, THREAD);
         THREAD.addLocations(
             LivingRoom.TV_DRAWER,
-            Kitchen.BOTTOM_CABINET
+            Kitchen.BOTTOM_CABINET,
+            DiningRoom.DISPLAY_CASE
         );
 
         ELASTIC = new Item("Elastic", 8, "Stretch! The more this is streched the firmer the item is.", loadImage("Items/Elastic.png"));
         IDtoItem.put(8, ELASTIC);
         ELASTIC.addLocations(
             LivingRoom.TV_DRAWER,
-            Kitchen.BOTTOM_CABINET
+            Kitchen.BOTTOM_CABINET,
+            DiningRoom.DISPLAY_CASE
         );
 
         BUCKET = new Item("Bucket", 9, "Stores liquids that you can mix together!", loadImage("Items/Bucket.png"));
@@ -113,29 +120,30 @@ public class Item
         PLASTICGUARD = new Item("Plastic Guard", 12, "A see through covering with holes.", loadImage("Items/PlasticGuard.png"));
         IDtoItem.put(12, PLASTICGUARD); // CRAFTABLE
         
-        VISORHANDLE = new Item("Visor Handle", 13, "Monkey", loadImage("Items/VisorHandle.png"));
+        VISORHANDLE = new Item("Visor Handle", 13, "The handle of a Visor hat. Wraps comfortably around your head!", loadImage("Items/VisorHandle.png"));
         IDtoItem.put(13, VISORHANDLE); // CRAFTABLE
         
-        SHIELDCOVER = new Item("Shield Cover", 14, "Monkey", loadImage("Items/ShieldCover.png"));
+        SHIELDCOVER = new Item("Shield Cover", 14, "One small step away from being a protective face shield!", loadImage("Items/ShieldCover.png"));
         IDtoItem.put(14, SHIELDCOVER); // CRAFTABLE
         
-        FACESHIELD = new Item("Face Shield", 15, "Monkey", loadImage("Items/FaceShield.png"));
+        FACESHIELD = new Item("Face Shield", 15, "A protective piece of gear that will protect you well against the virus, while still allowing for comfort!", loadImage("Items/FaceShield.png"));
         IDtoItem.put(15, FACESHIELD); // CRAFTABLE
         
-        FACEMASK = new Item("Face Mask", 16, "Monkey", loadImage("Items/FaceMask.png"));
+        FACEMASK = new Item("Face Mask", 16, "A physical barrier between your mouth and the outside environment!", loadImage("Items/FaceMask.png"));
         IDtoItem.put(16, FACEMASK); // CRAFTABLE
         
-        RUBBINGALCOHOL = new Item("Rubbing Alcohol", 17, "Monkey", loadImage("Items/RubbingAlcohol.png"));
+        RUBBINGALCOHOL = new Item("Rubbing Alcohol", 17, "A disinfectant that can be used to battle germs of all kinds!", loadImage("Items/RubbingAlcohol.png"));
         IDtoItem.put(17, RUBBINGALCOHOL);
         RUBBINGALCOHOL.addLocations(
             FirstBathroom.LEFT_CABINET,
             FirstBathroom.RIGHT_CABINET,
             SecondBathroom.CABINET,
             Kitchen.TOP_CABINET,
-            Kitchen.SINK
+            Kitchen.SINK,
+            DiningRoom.DISPLAY_CASE
         );
 
-        ALOEVERA = new Item("Aloe Vera Gel", 18, "Monkey", loadImage("Items/AloeVera.png"));
+        ALOEVERA = new Item("Aloe Vera Gel", 18, "A moisturizer that can help treat burns and dry skin.", loadImage("Items/AloeVera.png"));
         IDtoItem.put(18, ALOEVERA);
         ALOEVERA.addLocations(
             FirstBathroom.LEFT_CABINET,
@@ -143,7 +151,7 @@ public class Item
             SecondBathroom.CABINET
         );
 
-        ESSENTIALOIL = new Item("Essential Oil", 19, "Monkey", loadImage("Items/EssentialOil.png"));
+        ESSENTIALOIL = new Item("Essential Oil", 19, "Natural chemical compounds that can be found from plants.", loadImage("Items/EssentialOil.png"));
         IDtoItem.put(19, ESSENTIALOIL);
         ESSENTIALOIL.addLocations(
             FirstBathroom.LEFT_CABINET,
@@ -151,10 +159,10 @@ public class Item
             SecondBathroom.CABINET
         );
 
-        SANITIZERGEL = new Item("Sanitizer Gel", 20, "Monkey", loadImage("Items/SanitizerGel.png"));
+        SANITIZERGEL = new Item("Sanitizer Gel", 20, "The gel used inside of hand sanitizer bottles! Now if only you had an actual bottle...", loadImage("Items/SanitizerGel.png"));
         IDtoItem.put(20, SANITIZERGEL); // CRAFTABLE
 
-        HANDSANITIZER = new Item("Hand Sanitizer", 21, "Monkey", loadImage("Items/HandSanitizer.png"));
+        HANDSANITIZER = new Item("Hand Sanitizer", 21, "The hand sanitizer you all know and love! Great for disinfecting your hands in public.", loadImage("Items/HandSanitizer.png"));
         IDtoItem.put(21, HANDSANITIZER); // CRAFTABLE
     }
     public static Image loadImage(String filePath)
@@ -175,12 +183,16 @@ public class Item
     public final String DESCRIPTION;
     public final Image ICON;
     public final ArrayList<Integer> STORAGE_LOCATIONS;
-    private int quality;
+    public final int QUALITY;
     public Item(String name, int id, String description, Image icon)
     {
         this(name, id, description, false, icon);
     }
     public Item(String name, int id, String description, boolean isTool, Image icon)
+    {
+        this(name, id, description, isTool, icon, -1);
+    }
+    public Item(String name, int id, String description, boolean isTool, Image icon, int quality)
     {
         this.NAME = name;
         this.ID = id;
@@ -188,7 +200,7 @@ public class Item
         this.ICON = icon;
         this.STORAGE_LOCATIONS = new ArrayList<>();
         this.IS_TOOL = isTool;
-        this.quality = -1;
+        this.QUALITY = quality;
     }
     public void addLocations(int... IDs)
     {
@@ -215,13 +227,8 @@ public class Item
         return ((Item) o).ID == ID;
     }
 
-    public int getQuality()
+    public Item changeQuality(int quality)
     {
-        return quality;
-    }
-
-    public void setQuality(int quality)
-    {
-        this.quality = quality;
+        return new Item(NAME, ID, DESCRIPTION, IS_TOOL, ICON, quality);
     }
 }
