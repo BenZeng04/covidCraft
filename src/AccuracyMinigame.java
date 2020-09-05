@@ -200,6 +200,6 @@ public class AccuracyMinigame extends ScreenPanel
                    score-= (distance- 70);
             }
         }
-        return Math.max(score, 0);
+        return Math.min(100, (int) Math.pow(Math.max(0, score + 500), 0.75));
     }
 }
